@@ -1,0 +1,121 @@
+.test {
+  position: relative;
+  color: white;
+  background-color: red;
+  text-align: center;
+  width: auto;
+  height: 20px;
+}
+
+.titulo {
+  color: rgb(194, 54, 49);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: relative;
+  top: 3px;
+}
+
+.logoNav {
+  margin-left: 10px;
+}
+
+.off {
+  margin-left: 120vh;
+  padding-top: 8px;
+  color: white;
+}
+
+.logoCliente,
+.btHelp,
+.btAccount,
+.btExit {
+  color: black;
+}
+
+.logoCliente {
+  position: relative;
+  top: 12px;
+  font-weight: 500;
+}
+
+.headerT {
+  position: sticky;
+  top: 0;
+  background-color: rgb(191, 191, 191);
+}
+
+.btHelp,
+.btAccount {
+  margin-right: 25px;
+}
+
+.teraLogo {
+  margin-left: 10px;
+  border: 3px solid white;
+  border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+}
+
+.teraLogo:hover {
+  border: 3px solid white;
+}
+
+.lupa {
+  margin-right: 10px;
+  color: gray;
+}
+.misFacturasNav {
+  margin-right: 1%;
+}
+
+td a span {
+  color: #5473b5;
+}
+
+td a span:hover {
+  color: #9ab2e6;
+}
+
+.todasLasFacturas {
+  margin-left: 10px;
+}
+
+.informacionFactura {
+  position: sticky;
+  top: 0px;
+}
+
+.custom-select {
+  font-weight: bold;
+}
+
+.tamañoCubs, .datosGenerales,.tamañoUltiaConexion {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1122px) {
+  .tamañoCubs, .datosGenerales, .tamañoUltiaConexion {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 930px){
+    .tamañoUltiaConexion{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 870px){
+    .tamañoUltiaConexion{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 760px){
+    .tamañoUltiaConexion{
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+  .tamañoCubs, .datosGenerales, .tamañoUltiaConexion {
+    font-size: 12px;
+  }
+}
