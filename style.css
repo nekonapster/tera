@@ -63,7 +63,7 @@
   color: gray;
 }
 .misFacturasNav {
-  margin-right: 1%;
+  color: white;
 }
 
 td a span {
@@ -87,35 +87,50 @@ td a span:hover {
   font-weight: bold;
 }
 
-.tamañoCubs, .datosGenerales,.tamañoUltiaConexion {
+.tamañoCubs, .datosGenerales,.tamañoUltimaConexion {
   font-size: 16px;
 }
 
 @media screen and (max-width: 1122px) {
-  .tamañoCubs, .datosGenerales, .tamañoUltiaConexion {
+  .tamañoCubs, .datosGenerales, .tamañoUltimaConexion {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width: 930px){
-    .tamañoUltiaConexion{
+    .tamañoUltimaConexion{
         font-size: 13px;
     }
 }
 @media screen and (max-width: 870px){
-    .tamañoUltiaConexion{
+    .tamañoUltimaConexion{
         font-size: 11px;
     }
 }
 @media screen and (max-width: 760px){
-    .tamañoUltiaConexion{
+    .tamañoUltimaConexion{
         font-size: 16px;
     }
 }
 
 
 @media screen and (max-width: 400px) {
-  .tamañoCubs, .datosGenerales, .tamañoUltiaConexion {
+  .tamañoCubs, .datosGenerales, .tamañoUltimaConexion {
     font-size: 12px;
   }
 }
+
+
+
+/* USER */
+
+
+/* INDEX */
+@media screen and (max-width: 1030px) {
+    thead{
+      font-size: 12px;
+    }
+    }
+    
+
+
