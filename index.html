@@ -1,614 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- impor css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- import google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- import bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- import chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/teraLogo.ico"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- impor css -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- import google icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <!-- import bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <!-- import chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="shortcut icon" href="./assets/img/teraLogo.ico" type="image/x-icon" />
+    <!-- import DATE -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
 
-  <!-- import DATE -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- import chart.js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <!-- import scr bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
-  <title>TERA</title>
-</head>
+    <title>TERA</title>
+  </head>
 
-<body>
-  <!-- import chart.js -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-  <!-- import scr bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2">
-        <!-- logoCliente, zona para poner los banner de los mismos -->
-        <img src="./assets/img/aire.png" alt="Logo Aire" width="100" />
-      </div>
-      <!-- iconos de user, help and logout -->
-      <div class="col-10 mt-1">
-        <div class="d-flex justify-content-end">
-          <a class="btAccount" href="index.html" target="_self"><span class="material-symbols-outlined h3 mt-1">
-              draft_orders
-            </span></a>
-          <a class="btAccount" href="user.html" target="_self"><span
-              class="material-symbols-outlined h3 mt-1">Account_Circle</span></a>
-          <a class="btAccount" href="./assets/pdf/manual.pdf" target="_blank"><span
-              class="material-symbols-outlined h3 mt-1">
-              developer_guide
-            </span></a>
-          <a class="btExit" href="login.html" target="_self"><span
-              class="material-symbols-outlined h3 mt-1">move_item</span></a>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+          <!-- logoCliente, zona para poner los banner de los mismos -->
+          <img src="./assets/img/aire.png" alt="Logo Aire" width="100" />
+        </div>
+        <!-- iconos de user, help and logout -->
+        <div class="col-10 mt-1">
+          <div class="d-flex justify-content-end">
+            <a class="btAccount" href="index.html" target="_self"
+              ><span class="material-symbols-outlined h3 mt-1">
+                draft_orders
+              </span></a
+            >
+            <a class="btAccount" href="user.html" target="_self"
+              ><span class="material-symbols-outlined h3 mt-1"
+                >Account_Circle</span
+              ></a
+            >
+            <a class="btAccount" href="./assets/pdf/manual.pdf" target="_blank"
+              ><span class="material-symbols-outlined h3 mt-1">
+                developer_guide
+              </span></a
+            >
+            <a class="btExit" href="login.html" target="_self"
+              ><span class="material-symbols-outlined h3 mt-1"
+                >move_item</span
+              ></a
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- navbar con logo de TERA y seccion "misFacturas" and "buscarFacturas" -->
-  <!-- "buscarFacturas" es un dropdown para ampliar la busqueda por filtros tanto de fechas como de direccion -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between">
-    <!-- mx-auto hace que se centre el brand, esto lo hara con el bP del expand -->
-    <div>
-      <a href="index.html" class="teraLogo navbar-brand text-light h5 px-2 py-0">TERA</a>
+    <!-- navbar con logo de TERA y seccion "misFacturas" and "buscarFacturas" -->
+    <!-- "buscarFacturas" es un dropdown para ampliar la busqueda por filtros tanto de fechas como de direccion -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between"
+    >
+      <!-- mx-auto hace que se centre el brand, esto lo hara con el bP del expand -->
+      <div>
+        <a
+          href="index.html"
+          class="teraLogo navbar-brand text-light h5 px-2 py-0 mt-2"
+          >TERA</a
+        >
+        <!-- OPCION: marcador de ultima conexion al lado del logo de tera -->
+        <!-- <span style="color: white;"><strong>Ultima conexion:</strong> 08 noviembre 2023 13:49:41</span> -->
+      </div>
+      <div class="d-flex align-items-center">
+        <div>
+          <strong class="misFacturasNav">Mis Facturas</strong>
+        </div>
+        <div class="mx-3 align-items-center">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item active">
+              <!-- dropdown para desplegar el "elemento colapsado"-->
+              <button
+                class="btn btn-light text-dark btn-sm border border-0 fs-6 rounded-2"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#filtrosDeBusqueda"
+                aria-expanded="true"
+                aria-controls="collapseExample"
+              >
+                Localizar Facturas
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE LA CABECERA ---------------------------------------------------------------------------------->
+
+    <!-- ELEMENTO COLAPSADO ------------------- -->
+    <!-- filtros para ver las facturas, amplia a todas las facturas o entre fechas -->
+
+    <div class="container-fluid">
+      <div class="collapse mt-2" id="filtrosDeBusqueda">
+        <div class="row justify-content-sm-start justify-content-lg-end">
+          <!-- direcciones -->
+          <div class="col-3">
+            <form class="formularioDirecciones">
+              <select
+                class="form-select form-select-sm"
+                aria-label="Small select example"
+                name="direcciones"
+              >
+                <option selected style="font-weight: bold">
+                  Todas las direcciones
+                </option>
+                <option value="1">Fabrica Vieja 6 30b</option>
+              </select>
+            </form>
+          </div>
+          <!-- date range -->
+          <div class="col-3">
+            <input
+              type="text"
+              name="dates"
+              class="form-control form-control-sm"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <ul class="navbar-nav text-center misFacturasNav">
-      <li class="nav-item active">
-        <button class="btn btn-black text-light btn-sm border border-0 fs-6" type="button">
-          <strong>Mis Facturas</strong>
-        </button>
-      </li>
-      <li class="nav-item">
-        <!-- dropdown para desplegar el "elemento colapsado"-->
-        <button class="btn btn-light text-dark btn-sm border border-0 fs-6 rounded-2" type="button"
-        data-bs-toggle="collapse" data-bs-target="#filtrosDeBusqueda" aria-expanded="true"
-        aria-controls="collapseExample">
-        Localizar Facturas
-      </button>
-    </li>
-  </ul>
-  </nav>
-  <!-- FIN DE LA CABECERA ---------------------------------------------------------------------------------->
+    <!-- fin del elemento colapsado ------------ -->
 
-  <!-- ELEMENTO COLAPSADO ------------------- -->
-  <!-- filtros para ver las facturas, amplia a todas las facturas o entre fechas -->
-
-  <div class="container-fluid">
-    <div class="collapse mt-2" id="filtrosDeBusqueda">
-      <div class="row justify-content-end">
-        <!-- direcciones -->
-        <div class="col-3">
-          <form class="formularioDirecciones">
-            <select class="form-select form-select-sm" aria-label="Small select example" name="direcciones">
+    <div class="container-fluid mt-2">
+      <div class="row justify-content-sm-start justify-content-lg-end">
+        <!-- area de "ultima conexion" -->
+        <div class="col-12 col-lg-5 order-lg-1 order-3">
+          <strong>Ultima conexion:</strong> 08 noviembre 2023 13:49:41
+        </div>
+        <div class="col-4 order-lg-2 order-2">
+          <!-- ZONA SELECT CONTRATOS -->
+          <form class="formularioContratos">
+            <select
+              class="form-select form-select-sm"
+              aria-label="Small select example"
+              name="contratos"
+            >
               <option selected style="font-weight: bold">
-                Todas las direcciones
+                Todos los Contratos
               </option>
-              <option value="1">Fabrica Vieja 6 30b</option>
+              <option value="1">
+                ES0031104331972008FNOF AIRE - Fabrica Vieja 6 30b Granada
+                Granada
+              </option>
+              <option value="2">
+                ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 30b Granada
+                Granada
+              </option>
             </select>
           </form>
         </div>
-        <!-- date range -->
-        <div class="col-3">
-          <input type="text" name="dates" class="form-control form-control-sm" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- fin del elemento colapsado ------------ -->
-
-  <div class="container-fluid mt-2">
-    <div class="row justify-content-between">
-      <!-- area de "ultima conexion" -->
-      <div class="col-5">
-        <strong>Ultima conexion:</strong> 08 noviembre 2023 13:49:41
-      </div>
-      <div class="col-4">
-        <!-- ZONA SELECT CONTRATOS -->
-        <form class="formularioContratos">
-          <select class="form-select form-select-sm" aria-label="Small select example" name="contratos">
-            <option selected style="font-weight: bold">
-              Todos los Contratos
-            </option>
-            <option value="1">
-              ES0031104331972008FNOF AIRE - Fabrica Vieja 6 30b Granada
-              Granada
-            </option>
-            <option value="2">
-              ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 30b Granada
-              Granada
-            </option>
-          </select>
-        </form>
-      </div>
-
-      <div class="col-3">
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-append">
-              <!-- separacion y centrado de la lupa con respecto al input-text -->
+        <div class="col-3 order-lg-3 order-2">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-append">
+                <!-- separacion y centrado de la lupa con respecto al input-text -->
+              </div>
+              <!-- ZONA SEARCH -->
+              <!-- <form class="formularioBuscar"> -->
+              <span class="lupa material-symbols-outlined mt-1">search</span>
+              <input class="form-control form-control-sm mb-2 type=" text"
+              placeholder="Buscar" name="buscar" />
+              <!-- </form> -->
             </div>
-            <!-- ZONA SEARCH -->
-            <!-- <form class="formularioBuscar"> -->
-            <span class="lupa material-symbols-outlined mt-1">search</span>
-            <input class="form-control form-control-sm mb-2 type=" text" placeholder="Buscar" name="buscar" />
-            <!-- </form> -->
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-5">
-        <!-- informacionFactura, tiene un sticky en css -->
-        <div class="informacionFactura">
-          <div class="card w-auto pt-2">
-            <!-- ZONA DEL CHART.JS -->
-            <canvas id="myChart"></canvas>
-            <!--INFORMACION de mis facturas -->
+
+      <!-- CONTENEDOR GENERAL G-2 DIVIDE EL CENTRO -->
+      <div class="row g-2">
+        <!-- LADO IZQ -->
+        <div class="col-12 col-lg-5 order-lg-1 order-2">
+          <div class="row">
+            <!-- LADO IZQ ZONA ARRIBA -->
+            <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- ZONA DEL CHART.JS -->
+                    <canvas id="myChart"></canvas>
+                  </div>
+                </div>
+                <!--INFORMACION de mis facturas -->
+                <!-- informacionFactura, tiene un sticky en css -->
+                <!-- LADO IZQ ZONA ABAJO -->
+                <div class="col-lg-12">
+                  <div class="card mt-2 shadow-sm informacionFactura">
+                    <div class="card-body">
+                      <div class="table m-0">
+                        <div class="table-responsive">
+                          <caption>
+                            <strong>Aire-2</strong>
+                          </caption>
+                          <table
+                            class="table table-sm table-light table-striped"
+                          >
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>CUPS</td>
+                                <td>ES0031104331972008FN0F</td>
+                              </tr>
+                              <tr>
+                                <td>Dirección</td>
+                                <td>Fabrica Vieja 6 3ºb</td>
+                              </tr>
+                              <tr>
+                                <td>Provincia</td>
+                                <td>Granada</td>
+                              </tr>
+                              <tr>
+                                <td>Municipio</td>
+                                <td>Granada</td>
+                              </tr>
+                              <tr>
+                                <td>Código Postal</td>
+                                <td>18002</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
           </div>
-          <div class="card mt-2 p-2 shadow-sm informacionFactura">
-            <caption>
-              <strong>Aire-2</strong>
-            </caption>
-            <!-- ZONA DE LECTURAS DE FACTURAS -->
-            <table class="table table-light table-sm table-striped mt-2">
-              <tbody class="table-group-divider">
-                <tr>
-                  <td>CUPS</td>
-                  <td>ES0031104331972008FN0F</td>
+        </div>
+
+        <!-- ZONA DE LECTURAS DE FACTURAS -->
+        <!-- LADO DERECHO -->
+        <div class="col-12 col-lg-7 order-lg-2 order-1">
+          <div class="card">
+            <table
+              class="table table-sm table-striped align-middle table-light "
+            >
+              <thead class="table-dark">
+                <tr class="text-center">
+                  <th class="headerT">Fecha</th>
+                  <th class="headerT">Nº Factura</th>
+                  <th class="headerT">Desde</th>
+                  <th class="headerT">Hasta</th>
+                  <th class="headerT">Consumo kWh</th>
+                  <th class="headerT">Total €</th>
+                  <th class="headerT">Descargar</th>
                 </tr>
-                <tr>
-                  <td>Dirección</td>
-                  <td>Fabrica Vieja 6 3ºb</td>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <td class="align-middle">02/08/21</td>
+                  <td class="align-middle">AR-08-05965</td>
+                  <td class="align-middle">01/06/21</td>
+                  <td class="align-middle">06/07/21</td>
+                  <td class="align-middle">0 kWh</td>
+                  <td class="align-middle">22.02 €</td>
+                  <td class="align-middle">
+                    <a href="#">
+                      <span class="material-symbols-outlined">download </span>
+                    </a>
+                  </td>
                 </tr>
-                <tr>
-                  <td>Provincia</td>
-                  <td>Granada</td>
-                </tr>
-                <tr>
-                  <td>Municipio</td>
-                  <td>Granada</td>
-                </tr>
-                <tr>
-                  <td>Código Postal</td>
-                  <td>18002</td>
+                <tr class="text-center">
+                  <td>02/08/21</td>
+                  <td>AR-08-05965</td>
+                  <td>01/06/21</td>
+                  <td>06/07/21</td>
+                  <td>0 kWh</td>
+                  <td>22.02 €</td>
+                  <td>
+                    <a href="#"
+                      ><span class="material-symbols-outlined"
+                        >download</span
+                      ></a
+                    >
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
-      <!-- FACTURAS MOSTRADAS, cambiar contenido por un for -->
-      <div class="col-7">
-        <div class="card">
-          <table class="table table-sm table-striped align-middle table-light">
-            <thead class="table-dark">
-              <tr class="text-center">
-                <th class="headerT">Fecha</th>
-                <th class="headerT">Nº Factura</th>
-                <th class="headerT">Desde</th>
-                <th class="headerT">Hasta</th>
-                <th class="headerT">Consumo kWh</th>
-                <th class="headerT">Total €</th>
-                <th class="headerT">Descargar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-center">
-                <td class="align-middle">02/08/21</td>
-                <td class="align-middle">AR-08-05965</td>
-                <td class="align-middle">01/06/21</td>
-                <td class="align-middle">06/07/21</td>
-                <td class="align-middle">0 kWh</td>
-                <td class="align-middle">22.02 €</td>
-                <td class="align-middle">
-                  <a href="#">
-                    <span class="material-symbols-outlined">download </span>
-                  </a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td>02/08/21</td>
-                <td>AR-08-05965</td>
-                <td>01/06/21</td>
-                <td>06/07/21</td>
-                <td>0 kWh</td>
-                <td>22.02 €</td>
-                <td>
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <!-- scr chart.js -->
-  <script>
-    const ctx = document.getElementById("myChart");
+    <!-- scr chart.js -->
+    <script>
+      const ctx = document.getElementById("myChart");
 
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: [
-          "enero",
-          "febrero",
-          "marzo",
-          "arbril",
-          "mayo",
-          "junio",
-          "julio",
-          "agosto",
-          "septiembre",
-          "octubre",
-          "noviembre",
-          "diciembre",
-        ],
-        datasets: [
-          {
-            fill: {
-              target: "origin",
-              above: "rgb(254, 119, 123)",
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "enero",
+            "febrero",
+            "marzo",
+            "arbril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre",
+          ],
+          datasets: [
+            {
+              fill: {
+                target: "origin",
+                above: "rgb(254, 119, 123)",
+              },
+              label: "consumos",
+              data: [2, 19, 3, 5, 2, 2, 12, 1, 3, 3, 6, 4],
+              borderWidth: 2,
             },
-            label: "consumos",
-            data: [2, 19, 3, 5, 2, 2, 12, 1, 3, 3, 6, 4],
-            borderWidth: 2,
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
           },
-        ],
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
           },
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-  </script>
+      });
+    </script>
 
-  <!-- import bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
+    <!-- import bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <!-- import scr date -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <!-- import scr date -->
 
-  <!-- SCR TO DATE FILTER -->
-  <script>
-    $('input[name="dates"]').daterangepicker();
-  </script>
-</body>
-
+    <!-- SCR TO DATE FILTER -->
+    <script>
+      $('input[name="dates"]').daterangepicker();
+    </script>
+  </body>
 </html>
