@@ -78,59 +78,106 @@ td a span:hover {
   margin-left: 10px;
 }
 
+.custom-select {
+  font-weight: bold;
+}
+
+.tamañoCubs,
+.datosGenerales,
+.tamañoUltimaConexion {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1122px) {
+  .tamañoCubs,
+  .datosGenerales,
+  .tamañoUltimaConexion {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .tamañoUltimaConexion {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .tamañoUltimaConexion {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .tamañoUltimaConexion {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tamañoCubs,
+  .datosGenerales,
+  .tamañoUltimaConexion {
+    font-size: 12px;
+  }
+}
+
+/* LOGIN */
+.focusNone {
+  box-shadow: none !important;
+}
+#bordeLogoLogin {
+  border: 4px solid;
+  border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+  /* position: relative; */
+  display: inline-block;
+  line-height: 0.9;
+  padding: 0 20px;
+}
+
+.teraLogoLogin {
+  font-size: 50px;
+  color: black;
+  /* font-family: 'Saira Extra Condensed', sans-serif; */
+  font-family: "Teko", sans-serif;
+  position: relative;
+  top: 5px;
+}
+
+.card-login {
+  width: 300px;
+}
+
+/* USER */
+
 .informacionFactura {
   position: sticky;
   top: 0px;
 }
 
-.custom-select {
-  font-weight: bold;
-}
-
-.tamañoCubs, .datosGenerales,.tamañoUltimaConexion {
-  font-size: 16px;
-}
-
-@media screen and (max-width: 1122px) {
-  .tamañoCubs, .datosGenerales, .tamañoUltimaConexion {
-    font-size: 14px;
+@media screen and (max-width: 768px) {
+  .informacionFactura {
+    font-size: 12px;
   }
 }
-
-@media screen and (max-width: 930px){
-    .tamañoUltimaConexion{
-        font-size: 13px;
-    }
-}
-@media screen and (max-width: 870px){
-    .tamañoUltimaConexion{
-        font-size: 11px;
-    }
-}
-@media screen and (max-width: 760px){
-    .tamañoUltimaConexion{
-        font-size: 16px;
-    }
-}
-
-
-@media screen and (max-width: 400px) {
-  .tamañoCubs, .datosGenerales, .tamañoUltimaConexion {
+@media screen and (max-width: 560px) {
+  .mostrarFacturas {
     font-size: 12px;
   }
 }
 
-
-
-/* USER */
-
-
 /* INDEX */
 @media screen and (max-width: 1030px) {
-    thead{
-      font-size: 12px;
-    }
-    }
-    
+  thead {
+    font-size: 12px;
+  }
+}
 
-
+@media screen and (max-width: 1030px) {
+  .tablaIndex {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .material-symbols-outlined {
+    font-size: 36px !important;
+  }
+}

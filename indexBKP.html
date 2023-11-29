@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- impor css -->table
+    <!-- impor css -->
     <link rel="stylesheet" href="style.css" />
     <!-- import google icons -->
     <link
@@ -82,7 +82,7 @@
           <!-- logoCliente, zona para poner los banner de los mismos -->
           <img src="./assets/img/aire.png" alt="Logo Aire" width="100" />
         </div>
-        <!-- iconos de user, help and logout NOTA: lleva un !important en css -->
+        <!-- iconos de user, help and logout -->
         <div class="col-10 mt-1">
           <div class="d-flex justify-content-end">
             <a class="btAccount" href="index.html" target="_self"
@@ -154,9 +154,9 @@
 
     <div class="container-fluid">
       <div class="collapse mt-2" id="filtrosDeBusqueda">
-        <div class="row g-0 justify-content-sm-end align-items-center">
+        <div class="row justify-content-sm-start justify-content-lg-end">
           <!-- direcciones -->
-          <div class="col-4 col-sm-4 col-md-4 col-lg-3" style="margin-right: 5px;">
+          <div class="col-6 col-lg-3">
             <form class="formularioDirecciones">
               <select
                 class="form-select form-select-sm"
@@ -171,17 +171,13 @@
             </form>
           </div>
           <!-- date range -->
-          <div class="col-3 col-sm-4 col-md-4 col-lg-3" style="margin-right: 5px;">
+          <div class="col-6 col-lg-3">
             <input
               type="text"
               name="dates"
               class="form-control form-control-sm"
             />
           </div>
-          <!-- button buscar -->
-  <div class="col-3 col-sm-1 col-md-1 col-lg-1 d-flex justify-content-sm-start justify-content-sm-end justify-content-md-end justify-content-lg-end">
-    <button class="btn btn-primary btn-sm" style="width: 100px;" type="button">buscar</button>
-  </div>
         </div>
       </div>
     </div>
@@ -215,9 +211,12 @@
             </select>
           </form>
         </div>
-        <div class="col-8 col-sm-8 col-md-8 col-lg-3 order-lg-3 order-2">
+        <div class="col-6 col-lg-3 order-lg-3 order-2">
           <div class="form-group">
             <div class="input-group">
+              <div class="input-group-append">
+                <!-- separacion y centrado de la lupa con respecto al input-text -->
+              </div>
               <!-- ZONA SEARCH -->
               <!-- <form class="formularioBuscar"> -->
               <span class="lupa material-symbols-outlined mt-1">search</span>
@@ -236,52 +235,54 @@
           <div class="row">
             <!-- LADO IZQ ZONA ARRIBA -->
             <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body">
-                  <!-- ZONA DEL CHART.JS -->
-                  <canvas id="myChart"></canvas>
-                </div>
-              </div>
-              <!--INFORMACION de mis facturas -->
-              <!-- informacionFactura, tiene un sticky en css -->
-              <!-- LADO IZQ ZONA ABAJO -->
-              <div class="col-lg-12">
-                <div class="card mt-2 shadow-sm informacionFactura">
+                <div class="card">
                   <div class="card-body">
-                    <div class="table m-0">
-                      <div class="table-responsive">
-                        <caption>
-                          <strong>Aire-2</strong>
-                        </caption>
-                        <table class="table table-sm table-light table-striped">
-                          <tbody class="table-group-divider">
-                            <tr>
-                              <td>CUPS</td>
-                              <td>ES0031104331972008FN0F</td>
-                            </tr>
-                            <tr>
-                              <td>Dirección</td>
-                              <td>Fabrica Vieja 6 3ºb</td>
-                            </tr>
-                            <tr>
-                              <td>Provincia</td>
-                              <td>Granada</td>
-                            </tr>
-                            <tr>
-                              <td>Municipio</td>
-                              <td>Granada</td>
-                            </tr>
-                            <tr>
-                              <td>Código Postal</td>
-                              <td>18002</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    <!-- ZONA DEL CHART.JS -->
+                    <canvas id="myChart"></canvas>
+                  </div>
+                </div>
+                <!--INFORMACION de mis facturas -->
+                <!-- informacionFactura, tiene un sticky en css -->
+                <!-- LADO IZQ ZONA ABAJO -->
+                <div class="col-lg-12">
+                  <div class="card mt-2 shadow-sm informacionFactura">
+                    <div class="card-body">
+                      <div class="table m-0">
+                        <div class="table-responsive">
+                          <caption>
+                            <strong>Aire-2</strong>
+                          </caption>
+                          <table
+                            class="table table-sm table-light table-striped table-responsive"
+                          >
+                            <tbody class="table-group-divider">
+                              <tr>
+                                <td>CUPS</td>
+                                <td>ES0031104331972008FN0F</td>
+                              </tr>
+                              <tr>
+                                <td>Dirección</td>
+                                <td>Fabrica Vieja 6 3ºb</td>
+                              </tr>
+                              <tr>
+                                <td>Provincia</td>
+                                <td>Granada</td>
+                              </tr>
+                              <tr>
+                                <td>Municipio</td>
+                                <td>Granada</td>
+                              </tr>
+                              <tr>
+                                <td>Código Postal</td>
+                                <td>18002</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -291,7 +292,7 @@
         <div class="col-12 col-lg-7 order-lg-2 order-1">
           <div class="card">
             <table
-              class="table table-sm table-striped align-middle table-light"
+              class="table table-sm table-striped align-middle table-light table-responsive mostrarFacturas"
             >
               <thead class="table-dark">
                 <tr class="text-center">
@@ -299,33 +300,33 @@
                   <th class="headerT">Nº Factura</th>
                   <th class="headerT">Desde</th>
                   <th class="headerT">Hasta</th>
-                  <th class="headerT">Consumo kWh</th>
+                  <th class="headerT">Consumo</th>
                   <th class="headerT">Total €</th>
                   <th class="headerT">Descargar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="text-center">
-                  <td class="tablaIndex align-middle">02/08/21</td>
-                  <td class="tablaIndex align-middle">AR-08-05965</td>
-                  <td class="tablaIndex align-middle">01/06/21</td>
-                  <td class="tablaIndex align-middle">06/07/21</td>
-                  <td class="tablaIndex align-middle">0 kWh</td>
-                  <td class="tablaIndex align-middle">22.02 €</td>
-                  <td class="tablaIndex align-middle">
+                  <td class="align-middle">02/08/21</td>
+                  <td class="align-middle">AR-08-05965</td>
+                  <td class="align-middle">01/06/21</td>
+                  <td class="align-middle">06/07/21</td>
+                  <td class="align-middle">0 kWh</td>
+                  <td class="align-middle">22.02 €</td>
+                  <td class="align-middle">
                     <a href="#">
                       <span class="material-symbols-outlined">download </span>
                     </a>
                   </td>
                 </tr>
                 <tr class="text-center">
-                  <td class="tablaIndex">02/08/21</td>
-                  <td class="tablaIndex">AR-08-05965</td>
-                  <td class="tablaIndex">01/06/21</td>
-                  <td class="tablaIndex">06/07/21</td>
-                  <td class="tablaIndex">0 kWh</td>
-                  <td class="tablaIndex">22.02 €</td>
-                  <td class="tablaIndex">
+                  <td>02/08/21</td>
+                  <td>AR-08-05965</td>
+                  <td>01/06/21</td>
+                  <td>06/07/21</td>
+                  <td>0 kWh</td>
+                  <td>22.02 €</td>
+                  <td>
                     <a href="#"
                       ><span class="material-symbols-outlined"
                         >download</span
@@ -400,6 +401,7 @@
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
+    <!-- import scr date -->
 
     <!-- SCR TO DATE FILTER -->
     <script>
