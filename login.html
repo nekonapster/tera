@@ -31,8 +31,8 @@
 <body>
   <div class="container">
     <div class="card mt-5 p-5 border-0" style="background-color: rgb(163, 219, 220);">
-      <img src="./assets/img/turbinasBG.jpg" alt="logo de turbinas eolicas">
-      <div class=" row justify-content-lg-end justify-content-center">
+      <img src="./assets/img/turbinasBG.jpg" alt="logo de turbinas eolicas" class="d-none d-lg-block ">
+      <div class=" row justify-content-lg-end  justify-content-center">
         <div class="login col-lg-4 col-md-6 col-sm-8 col-8">
         <br />
         <div class="card card-login shadow">
@@ -40,19 +40,18 @@
             <div id="bordeLogoLogin">
               <span class="teraLogoLogin">TERA</span>
             </div>
-            <form method="GET" action="index.html">
+            <form method="POST" action="index.html">
               <div class="card-body text-center">
                 <label for="name" class="form-label"></label>
                 <input type="text" id="name"
                   class="text-center form-control form-control-sm w-75 mx-auto border-start-0 border-end-0 border-top-0 rounded-0 focusNone"
                   placeholder="Usuario" autofocus />
-                  <br />
                 <label for="pass" class="form-label"></label>
                 <input type="password" id="pass"
                   class="text-center form-control form-control-sm w-75 tex mx-auto border-start-0 border-end-0 border-top-0 rounded-0 focusNone"
                   placeholder="Contraseña" />
                   <div class="d-grid mt-5">
-                  <input type="submit" class="btn btn-outline-secondary btn-sm mx-auto w-75"/>
+                  <input type="submit" class="btn btn-outline-secondary btn-sm mx-auto w-75" />
                 </div>
               </div>
             </form>
