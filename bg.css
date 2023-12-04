@@ -1,17 +1,10 @@
-/* body{
-    background-image: url(./assets/img/turbinasBG.jpg);
-    background-repeat: no-repeat;
-    position: relative;
-  }
-   */
+img {
+	width: 40%;
+	position: absolute;
+	top: 40px;
+	left: 150px;
+}
 
-   img{
-   width: 40%;
-   position: absolute;
-    top: 40px;
-    left: 150px;
-  }
-
-body{
-  background-color: rgb(163, 219, 220) !important;
+body {
+	background-color: rgb(163, 219, 220) !important;
 }

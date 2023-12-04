@@ -1,176 +1,194 @@
 .test {
-  position: relative;
-  color: white;
-  background-color: red;
-  text-align: center;
-  width: auto;
-  height: 20px;
+	position: relative;
+	color: white;
+	background-color: red;
+	text-align: center;
+	width: auto;
+	height: 20px;
 }
 
 .logoNav {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .off {
-  margin-left: 120vh;
-  padding-top: 8px;
-  color: white;
+	margin-left: 120vh;
+	padding-top: 8px;
+	color: white;
 }
 
 .logoCliente,
 .btHelp,
 .btAccount,
 .btExit {
-  color: black;
+	color: black;
 }
 
 .logoCliente {
-  position: relative;
-  top: 12px;
-  font-weight: 500;
+	position: relative;
+	top: 12px;
+	font-weight: 500;
 }
 
 .headerT {
-  position: sticky;
-  top: 0;
-  background-color: rgb(191, 191, 191);
+	position: sticky;
+	top: 0;
+	background-color: rgb(191, 191, 191);
 }
 
 .btHelp,
 .btAccount {
-  margin-right: 25px;
+	margin-right: 25px;
 }
 
 .teraLogo {
-  margin-left: 10px;
-  border: 3px solid white;
-  border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+	margin-left: 10px;
+	border: 3px solid white;
+	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
 }
 
 .teraLogo:hover {
-  border: 3px solid white;
+	border: 3px solid white;
 }
 
 .lupa {
-  margin-right: 10px;
-  color: gray;
+	margin-right: 10px;
+	color: gray;
 }
 .misFacturasNav {
-  color: white;
+	color: white;
 }
 
 td a span {
-  color: #5473b5;
+	color: #5473b5;
 }
 
 td a span:hover {
-  color: #9ab2e6;
+	color: #9ab2e6;
 }
 
 .todasLasFacturas {
-  margin-left: 10px;
+	margin-left: 10px;
 }
 
 .custom-select {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .tamañoCubs,
 .datosGenerales,
 .tamañoUltimaConexion {
-  font-size: 16px;
+	font-size: 16px;
 }
 
-@media screen and (max-width: 1122px) {
-  .tamañoCubs,
-  .datosGenerales,
-  .tamañoUltimaConexion {
-    font-size: 14px;
-  }
+@media screen and(max-width: 1122px) {
+	.tamañoCubs,
+	.datosGenerales,
+	.tamañoUltimaConexion {
+		font-size: 14px;
+	}
 }
 
-@media screen and (max-width: 930px) {
-  .tamañoUltimaConexion {
-    font-size: 13px;
-  }
+@media screen and(max-width: 930px) {
+	.tamañoUltimaConexion {
+		font-size: 13px;
+	}
 }
-@media screen and (max-width: 870px) {
-  .tamañoUltimaConexion {
-    font-size: 11px;
-  }
+@media screen and(max-width: 870px) {
+	.tamañoUltimaConexion {
+		font-size: 11px;
+	}
 }
-@media screen and (max-width: 760px) {
-  .tamañoUltimaConexion {
-    font-size: 16px;
-  }
+@media screen and(max-width: 760px) {
+	.tamañoUltimaConexion {
+		font-size: 16px;
+	}
 }
 
-@media screen and (max-width: 400px) {
-  .tamañoCubs,
-  .datosGenerales,
-  .tamañoUltimaConexion {
-    font-size: 12px;
-  }
+@media screen and(max-width: 400px) {
+	.tamañoCubs,
+	.datosGenerales,
+	.tamañoUltimaConexion {
+		font-size: 12px;
+	}
 }
 
 /* LOGIN */
 .focusNone {
-  box-shadow: none !important;
+	box-shadow: none !important;
 }
 #bordeLogoLogin {
-  border: 4px solid;
-  border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
-  /* position: relative; */
-  display: inline-block;
-  line-height: 0.9;
-  padding: 0 20px;
+	border: 4px solid;
+	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+	/* position: relative; */
+	display: inline-block;
+	line-height: 0.9;
+	padding: 0 20px;
 }
 
-.teraLogoLogin {
-  font-size: 50px;
-  color: black;
-  /* font-family: 'Saira Extra Condensed', sans-serif; */
-  font-family: "Teko", sans-serif;
-  position: relative;
-  top: 5px;
+.teraLogoLogin{
+	font-size: 50px;
+	color: black;
+	/* font-family: 'Saira Extra Condensed', sans-serif; */
+	font-family: "Teko", sans-serif;
+	position: relative;
+	top: 5px;
 }
+
+.teraLogoBorderIndex, .teraLogoBorderUser {
+	margin-left: 10px;
+	padding-bottom: 4px !important;
+	height: 33px !important;
+	border: 3px solid white;
+	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+	
+	display: flex;
+	align-items: center;	
+
+}
+
+.teraLogoIndex, .teraLogoUser{
+	font-size: 30px !important ;
+	font-family: "Teko", sans-serif;
+	margin-left: 15px;
+}
+
 
 .card-login {
-  width: 300px;
+	width: 300px;
 }
 
 /* USER */
-
 .informacionFactura {
-  position: sticky;
-  top: 0px;
+	position: sticky;
+	top: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .informacionFactura {
-    font-size: 12px;
-  }
+@media screen and(max-width: 768px) {
+	.informacionFactura {
+		font-size: 12px;
+	}
 }
-@media screen and (max-width: 560px) {
-  .mostrarFacturas {
-    font-size: 12px;
-  }
+@media screen and(max-width: 560px) {
+	.mostrarFacturas {
+		font-size: 12px;
+	}
 }
 
 /* INDEX */
-@media screen and (max-width: 1030px) {
-  thead {
-    font-size: 12px;
-  }
+@media screen and(max-width: 1030px) {
+	thead {
+		font-size: 12px;
+	}
 }
 
-@media screen and (max-width: 1030px) {
-  .tablaIndex {
-    font-size: 12px;
-  }
+@media screen and(max-width: 1030px) {
+	.tablaIndex {
+		font-size: 12px;
+	}
 }
-@media screen and (max-width: 992px) {
-  .material-symbols-outlined {
-    font-size: 36px !important;
-  }
+@media screen and(max-width: 992px) {
+	.material-symbols-outlined {
+		font-size: 36px !important;
+	}
 }
