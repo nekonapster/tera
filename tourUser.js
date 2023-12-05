@@ -15,7 +15,7 @@ const driverObj = driver({
 			element: "#zona1",
 			popover: {
 				title: "Zona uno",
-				description: "Hemos dividido en dos zonas el antiguo contenido. Una para 'Datos Personales', 'Cambio de Contraseña' e 'Informes de Errores'",
+				description: "Hemos dividido en dos zonas el antiguo contenido. Una para 'Datos Personales', 'Cambio de Contraseña' y 'Notificaciones'",
 			}
 		},
 		{
