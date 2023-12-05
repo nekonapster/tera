@@ -22,14 +22,14 @@ const driverObj = driver({
 			element: "#zona2",
 			popover: {
 				title: "Zona dos",
-				description: "Y el resto para 'Datos Generales' y 'Datps Cups'"
+				description: "Y el resto para 'Datos Generales' y 'Datos Cups'"
 			}
 		},
 		{
 			element: "#cambioPass",
 			popover: {
 				title: "Cambio de Contraseña",
-				description: "Desde aqui puedes hacer el cambio de tu contraña."
+				description: "Desde aqui puedes hacer el cambio de tu contraseña."
 			}
 		},
 		{
