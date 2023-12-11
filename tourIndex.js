@@ -53,7 +53,7 @@ const driverObj = driver({
 			element: "#zonaUC",
 			popover: {
 				title: "Zona de ultima conexion",
-				description: "Podras ver tu ultima conexion desde aqui"
+				description: "Podras ver tu ultima conexio desde aqui"
 			}
 		}, {
 			element: "#graficaIndex",

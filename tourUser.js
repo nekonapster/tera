@@ -15,7 +15,7 @@ const driverObj = driver({
 			element: "#zona1",
 			popover: {
 				title: "Zona uno",
-				description: "Hemos dividido en dos zonas el antiguo contenido. Una para 'Datos Personales', 'Cambio de Contraseña' y 'Notificaciones'",
+				description: "Hemos dividido en dos zonas el antiguo contenido. Una para 'Datos Personales', 'Cambio de Contraseña' e 'Informes de Errores'",
 			}
 		},
 		{
@@ -29,7 +29,7 @@ const driverObj = driver({
 			element: "#cambioPass",
 			popover: {
 				title: "Cambio de Contraseña",
-				description: "Desde aqui puedes hacer el cambio de tu contraseña."
+				description: "Desde aqui puedes hacer el cambio de tu contraña."
 			}
 		},
 		{
