@@ -159,6 +159,22 @@ td a span:hover {
 	width: 300px;
 }
 
+
+@media (max-width: 576px) {
+	.login {
+	  display: flex;
+	  justify-content: center;
+	}
+  }
+
+  @media (min-width: 576px) {
+	.login {
+	  justify-content: flex-end;
+	}
+  }
+  
+
+
 /* USER */
 .informacionFactura {
 	position: sticky;
