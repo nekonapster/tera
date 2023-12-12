@@ -159,6 +159,64 @@ td a span:hover {
 	width: 300px;
 }
 
+@media (max-width: 992px) {
+	.login {
+	  display: flex;
+	  justify-content: center;
+	}
+  }
+
+  @media (min-width: 576px) {
+	.login {
+	  justify-content: flex-end;
+	  margin-top: 50%;
+	}
+
+  }
+
+  /* for iPad Air */
+  @media (width: 820px) {
+	.login {
+	  justify-content: flex-end;
+	  margin: 33% auto !important;
+	}
+  }
+  
+  /* for iPad Mini vertical*/
+  @media (width: 768px) {
+	  .login {
+		  justify-content: flex-end;
+		  margin: 25% auto !important;
+		}
+	}
+	/* for iPad Mini horizontal*/
+  @media (width: 1180px) {
+	.login {
+	  justify-content: flex-end;
+	  margin: 10% auto !important;
+	}
+  }
+
+  /* for iPad Pro vertical*/
+  @media (width: 1024px) {
+	.login{
+	  justify-content: flex-end;
+	  margin: 10% auto !important;
+	}
+}
+
+  /* for Surface Pro */
+  @media (width: 912px) {
+	.login{
+		justify-content: flex-end;
+		margin: 30% auto !important;
+		zoom: 110%;
+	}
+}
+  
+
+
+
 /* USER */
 .informacionFactura {
 	position: sticky;
