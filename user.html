@@ -119,7 +119,7 @@
 							<input type="text" class="form-control form-control-sm" id="exampleFormControlInput1"
 								placeholder="xxx-uuu-000-1111" disabled>
 							<input type="password" class="form-control form-control-sm mt-2"
-								id="exampleFormControlInput1" placeholder="5646464646464654" disabled>
+								id="exampleFormControlInput2" placeholder="5646464646464654" disabled>
 							<div class="d-grid">
 								<!-- MODAL - acceso a la ventana mediante button -->
 								<button href="#" class="btn btn-dark btn-sm mt-2" data-bs-toggle="modal"
@@ -139,7 +139,7 @@
 										</div>
 										<div class="modal-body">
 											<input type="password" class="form-control form-control-sm mt-1"
-												id="exampleFormControlInput1" placeholder="5646464646464654">
+												id="exampleFormControlInput3" placeholder="5646464646464654">
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-primary" data-bs-dismiss="modal"
@@ -222,11 +222,11 @@
 						<h5 class="card-title">Notificaciones</h5>
 						<div class="row align-items-center g-2">
 							<div class="col-lg-8 col-md-12">
-								<select name="" id="" class="form-select form-select-sm">
-									<option value="">
+								<select name id class="form-select form-select-sm">
+									<option value>
 										ES0031104331972008FNOF AIRE - Fabrica Vieja 6 Yb Granada Granada
 									</option>
-									<option value="">
+									<option value>
 										ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 Yb Granada Granada
 									</option>
 								</select>
@@ -252,41 +252,31 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<select id="selectModal" class="form-select" aria-label="Default select example">
-									<option value="0" disabled>Seleccione un motivo</option>
+								<select id="selectModal" class="form-select" aria-label="Default select example" onchange="estadoSelect()">
+									<option selected disabled>Seleccione un motivo</option>
 									<option value="1">Reclamacion de factura</option>
 									<option value="2">Modificacion de contador</option>
 									<option value="3">Modificacion potencio y/o tarifa</option>
 									<option value="4">Modificacion de titular</option>
-									<option value="4">Modificacion de cuenta corriente</option>
-									<option value="5">Activacion autoconsumo</option>
-									<option value="6">Otros motivos</option>
+									<option value="5">Modificacion de cuenta corriente</option>
+									<option value="6">Activacion autoconsumo</option>
+									<option value="7">Otros motivos</option>
 								</select>
 								<br>
-								<!-- default -->
-								<div id="stateDefault" hidden>
-									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
-										placeholder="Porfavor detalle la consulta"
-										class="form-control table responsive"></textarea>
-									<div class="my-3">
-										<input class="form-control form-control-sm" id="formFileSm" type="file">
-									</div>
-								</div>
-
 								<!-- reclamacion de factura -->
-								<div id="state1" hidden >
-									<select name="" id="" class="form-select">
-										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
-										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
-										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
-										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+								<div id="state1" style="display: none">
+									<select name id class="form-select">
+										<option value>factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value>factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value>factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value>factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
 									</select>
 									<br>
-									<select name="" id="" class="form-select">
-										<option value="">Lectura de energia activa y reactiva</option>
-										<option value="">Maximetro</option>
-										<option value="">Precios</option>
-										<option value="">Otros</option>
+									<select name id class="form-select">
+										<option value>Lectura de energia activa y reactiva</option>
+										<option value>Maximetro</option>
+										<option value>Precios</option>
+										<option value>Otros</option>
 									</select>
 									<br>
 									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
@@ -294,7 +284,7 @@
 										class="form-control table responsive"></textarea>
 								</div>
 								<!-- modificacion de contador -->
-								<div id="state2" hidden>
+								<div id="state2" style="display: none">
 									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
 										placeholder="Porfavor detalle la consulta"
 										class="form-control table responsive"></textarea>
@@ -304,10 +294,11 @@
 									</div>
 								</div>
 								<!-- modificacion de potencia y tarifa -->
-								<div id="state3" class="container" hidden>
+								<div id="state3" class="container" style="display: none">
 									<div class="card text-center">
 										<div class="card-body my-0">
-											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga
+												el
 												formulario</span>
 											<br>
 											<a href="./assets/pdf/manual.pdf"
@@ -325,10 +316,11 @@
 									</div>
 								</div>
 								<!-- cambio de titular -->
-								<div id="state4" class="container" hidden>
+								<div id="state4" class="container" style="display: none">
 									<div class="card text-center my-0">
 										<div class="card-body">
-											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga
+												el
 												formulario</span>
 											<br>
 											<a href="./assets/pdf/manual.pdf"
@@ -346,10 +338,11 @@
 									</div>
 								</div>
 								<!-- modificacion cuenta corriente -->
-								<div id="state5" class="container" hidden>
+								<div id="state5" class="container" style="display: none">
 									<div class="card text-center">
 										<div class="card-body my-0">
-											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga
+												el
 												formulario</span>
 											<br>
 											<a href="./assets/pdf/manual.pdf"
@@ -367,7 +360,7 @@
 									</div>
 								</div>
 								<!-- activacion autoconsumo -->
-								<div id="state6" hidden>
+								<div id="state6" style="display: none">
 									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
 										placeholder="Porfavor detalle la consulta"
 										class="form-control table responsive"></textarea>
@@ -376,7 +369,7 @@
 									</div>
 								</div>
 								<!-- otros -->
-								<div id="state7" hidden>
+								<div id="state7" style="display: block">
 									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
 										placeholder="Porfavor detalle la consulta"
 										class="form-control table responsive"></textarea>
@@ -386,8 +379,7 @@
 								</div>
 							</div>
 
-
-							<div class="modal-footer" hidden>
+							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
 									Cancelar
 								</button>
@@ -426,36 +418,36 @@
 							<strong>Datos Generales</strong>
 						</span>
 						<div class="card shadow-sm p-1">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Codigo del Contrato</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="ARF0004720">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">NIF</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="77488396Q">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Nombre</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="Andrea">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Apellidos</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm"
 								placeholder="Peñalver Ruíz">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Fecha de inicio</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="02-03-2020">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Duracion</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="12">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">Fecha Activacion Auto-Consumo</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm" placeholder="-">
-							<label for="" class="fs-6">
+							<label for class="fs-6">
 								<span class="datosGenerales">IBAN</span>
 							</label>
 							<input type="text" disabled class="form-control form-control-sm"
@@ -470,14 +462,14 @@
 						<div class="card shadow-sm p-1">
 							<div class="row g-1">
 								<div class="col-9">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Direccion</span>
 									</label>
 									<input class="form-control form-control-sm" type="text"
 										placeholder="Fabrica Vieja 6 3ºb" disabled>
 								</div>
 								<div class="col-3">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Codigo Postal</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="18002"
@@ -487,41 +479,41 @@
 
 							<div class="row g-1">
 								<div class="col-4">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Municipio</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="Granada"
 										disabled>
 								</div>
 								<div class="col-4">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Provincia</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="Granada"
 										disabled>
 								</div>
 								<div class="col-4">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Tarifa</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="2.0TD"
 										disabled>
 								</div>
 								<div class="col-7">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Distribuidora</span>
 									</label>
 									<input class="form-control form-control-sm" type="text"
 										placeholder="Edistribucion Redes Digitales S.L." disabled>
 								</div>
 								<div class="col-3">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Autoconsumo</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="No" disabled>
 								</div>
 								<div class="col-2">
-									<label for="" class="fs-6">
+									<label for class="fs-6">
 										<span class="tamañoCubs">Contrato</span>
 									</label>
 									<input class="form-control form-control-sm" type="text" placeholder="Fijo" disabled>
