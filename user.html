@@ -48,6 +48,7 @@
 	<!-- import driver.js css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
 
+	<script defer src="./modal.js"></script>
 
 	<title>USER</title>
 </head>
@@ -62,10 +63,11 @@
 			<!-- iconos de user, help and logout -->
 			<div class="col-10 mt-1">
 				<div class="d-flex justify-content-end">
-					<a class="btAccount" href="#" target="_self"><span class="material-symbols-outlined h3 mt-1"
-							id="tuto" onclick="iniciarTour()">
+					<a class="btAccount" href="#" target="_self">
+						<span class="material-symbols-outlined h3 mt-1" id="tuto" onclick="iniciarTour()">
 							smart_display
-						</span></a>
+						</span>
+					</a>
 					<a class="btAccount" href="index.html" target="_self">
 						<span class="material-symbols-outlined h3 mt-1">
 							draft_orders
@@ -106,8 +108,7 @@
 		<div class="row justify-content-between g-3">
 			<!-- area de "ultima conexion" -->
 			<!-- card que envuelve todo el lado derecho -->
-			<div class="col card bg-light border-2" id="zona1">
-				<span class="tamañoUltimaConexion">
+			<div class="col card bg-light border-2" id="zona1"> <span class="tamañoUltimaConexion">
 					<strong>Ultima conexion:</strong>
 					08 noviembre 2023 13:49:41</span>
 				<!-- card cambiar contraseña -->
@@ -126,7 +127,7 @@
 									Cambiar la contraseña
 								</button>
 							</div>
-							<!-- MODAL START -->
+							<!-- MODAL CAMBIO DE CONTRASEÑA START -->
 							<div class="modal fade" id="cambioClaveModal" tabindex="-1"
 								aria-labelledby="exampleModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
@@ -215,7 +216,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- SECCION INFORME DE ERRORES -->
+				<!-- SECCION NOTIFICACIONES -->
 				<div class="card mt-1 mb-2 shadow-sm">
 					<div class="card-body" id="notificaciones">
 						<h5 class="card-title">Notificaciones</h5>
@@ -251,25 +252,142 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<select class="form-select" aria-label="Default select example">
-									<option selected disabled>Seleccione un motivo</option>
+								<select id="selectModal" class="form-select" aria-label="Default select example">
+									<option value="0" disabled>Seleccione un motivo</option>
 									<option value="1">Reclamacion de factura</option>
-									<option value="2">Modificacion de contrato</option>
+									<option value="2">Modificacion de contador</option>
 									<option value="3">Modificacion potencio y/o tarifa</option>
-									<option value="3">Modificacion de titular</option>
-									<option value="3">Activacion autoconsumo</option>
-									<option value="3">Otros motivos</option>
+									<option value="4">Modificacion de titular</option>
+									<option value="4">Modificacion de cuenta corriente</option>
+									<option value="5">Activacion autoconsumo</option>
+									<option value="6">Otros motivos</option>
 								</select>
 								<br>
-								<br>
-								<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
-									placeholder="Porfavor detalle la consulta"></textarea>
-								<br>
-								<div class="my-3">
-									<input class="form-control form-control-sm" id="formFileSm" type="file">
+								<!-- default -->
+								<div id="stateDefault" hidden>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+
+								<!-- reclamacion de factura -->
+								<div id="state1" hidden >
+									<select name="" id="" class="form-select">
+										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+										<option value="">factura numero XXXXXXXXXXXXXXXXXXXXX €</option>
+									</select>
+									<br>
+									<select name="" id="" class="form-select">
+										<option value="">Lectura de energia activa y reactiva</option>
+										<option value="">Maximetro</option>
+										<option value="">Precios</option>
+										<option value="">Otros</option>
+									</select>
+									<br>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control table responsive"></textarea>
+								</div>
+								<!-- modificacion de contador -->
+								<div id="state2" hidden>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control table responsive"></textarea>
+									<br>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+								<!-- modificacion de potencia y tarifa -->
+								<div id="state3" class="container" hidden>
+									<div class="card text-center">
+										<div class="card-body my-0">
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+												formulario</span>
+											<br>
+											<a href="./assets/pdf/manual.pdf"
+												style="text-decoration: none; font-weight: bold;" target="_blank"><span
+													class="material-symbols-outlined"
+													style="font-size: 32px; margin-top: 15px;">download</span></a>
+										</div>
+									</div>
+									<br>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control  table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+								<!-- cambio de titular -->
+								<div id="state4" class="container" hidden>
+									<div class="card text-center my-0">
+										<div class="card-body">
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+												formulario</span>
+											<br>
+											<a href="./assets/pdf/manual.pdf"
+												style="text-decoration: none; font-weight: bold;" target="_blank"><span
+													class="material-symbols-outlined"
+													style="font-size: 32px; margin-top: 15px;">download</span></a>
+										</div>
+									</div>
+									<br>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control  table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+								<!-- modificacion cuenta corriente -->
+								<div id="state5" class="container" hidden>
+									<div class="card text-center">
+										<div class="card-body my-0">
+											<span class="card-title" style="color: grey; font-size: 20px;">Descarga el
+												formulario</span>
+											<br>
+											<a href="./assets/pdf/manual.pdf"
+												style="text-decoration: none; font-weight: bold;" target="_blank"><span
+													class="material-symbols-outlined"
+													style="font-size: 32px; margin-top: 15px;">download</span></a>
+										</div>
+									</div>
+									<br>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control  table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+								<!-- activacion autoconsumo -->
+								<div id="state6" hidden>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
+								</div>
+								<!-- otros -->
+								<div id="state7" hidden>
+									<textarea name="informacionExtra" id="informacionExtra" cols="60" rows="5"
+										placeholder="Porfavor detalle la consulta"
+										class="form-control table responsive"></textarea>
+									<div class="my-3">
+										<input class="form-control form-control-sm" id="formFileSm" type="file">
+									</div>
 								</div>
 							</div>
-							<div class="modal-footer">
+
+
+							<div class="modal-footer" hidden>
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
 									Cancelar
 								</button>

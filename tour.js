@@ -5,7 +5,6 @@ const driverObj = driver({
 	nextBtnText: "Next",
 	doneBtnText: "Finish",
 	overlayColor: "black",
-	// progressText: "Step {{current}} of {{total}}",
 	showProgress: false,
 	steps: [
 		{

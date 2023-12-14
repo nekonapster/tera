@@ -130,7 +130,6 @@ td a span:hover {
 .teraLogoLogin{
 	font-size: 50px;
 	color: black;
-	/* font-family: 'Saira Extra Condensed', sans-serif; */
 	font-family: "Teko", sans-serif;
 	position: relative;
 	top: 5px;
@@ -207,13 +206,26 @@ td a span:hover {
 
   /* for Surface Pro */
   @media (width: 912px) {
-	.login{
-		justify-content: flex-end;
-		margin: 30% auto !important;
-		zoom: 110%;
+	  .login{
+		  justify-content: flex-end;
+		  margin: 30% auto !important;
+		  zoom: 110%;
+		}
 	}
-}
-  
+	
+	/* for tablets 1920 */
+	@media (width: 1920px) {
+		.login{
+			justify-content: flex-end;
+			margin: 10% 0 0 70% !important;
+			zoom: 130%;
+		  }
+		  .molinos{
+			width: 600px !important;
+			margin: 50px 0;
+		  }
+	  }
+
 
 
 
