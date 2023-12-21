@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- import css -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 
   <!-- import driverPopover.css -->
-  <link rel="stylesheet" href="./driverPopover.css">
+  <link rel="stylesheet" href="./css/driverPopover.css">
 
   <!-- import google icons -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-      <!-- import google fonts -->
+  <!-- import google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100&family=Teko:wght@300&display=swap"
@@ -51,6 +51,8 @@
   <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
   <!-- import driver.js css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
+
+  <script defer src="./js/script.js"></script>
 
   <title>TERA</title>
 </head>
@@ -91,14 +93,12 @@
   <!-- "buscarFacturas" es un dropdown para ampliar la busqueda por filtros tanto de fechas como de direccion -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between">
     <!-- mx-auto hace que se centre el brand, esto lo hara con el bP del expand -->
-    <div class="teraLogoBorderIndex">
-      <a href="index.html" class="navbar-brand text-light mt-2 teraLogoIndex">TERA</a>
-      <!-- OPCION: marcador de ultima conexion al lado del logo de tera -->
-      <!-- <span style="color: white;"><strong>Ultima conexion:</strong> 08 noviembre 2023 13:49:41</span> -->
-    </div>
-    <div class="d-flex align-items-center">
-      <div>
-        <strong class="misFacturasNav" id="b1">Mis Facturas</strong>
+    <!-- este div se usa para situar un espacio en blanco y desplazar asi 'mis facturas' y 'localizar facturas'  -->
+    <!-- <div></div> -->
+    <!-- DEPRECATED by Joaquin 20/12/2023 -->
+    <!-- <div class="teraLogoBorderUser"><a href="index.html" class="navbar-brand text-light mt-2 teraLogoUser">TERA</a></div> -->
+    <div class="d-flex align-items-center"><div>
+        <strong class="misFacturasNav m-2" id="b1">Mis Facturas</strong>
       </div>
       <div class="mx-3 align-items-center">
         <ul class="navbar-nav text-center">
@@ -151,7 +151,7 @@
     <div class="row justify-content-sm-start justify-content-lg-end">
       <!-- area de "ultima conexion" -->
       <div class="col-12 col-lg-5 order-lg-1 order-3" id="zonaUC">
-        <strong>Ultima conexion:</strong> 08 noviembre 2023 13:49:41
+        <strong>Ultima conexion:</strong><span class="lastConnection"></span>
       </div>
       <div class="col-4 order-lg-2 order-2">
         <!-- ZONA SELECT CONTRATOS -->
@@ -339,7 +339,7 @@
 
 
   <!-- scr driver.js -->
-  <script src="./tourIndex.js"></script>
+  <script src="./js/tourIndex.js"></script>
 
   <!-- import bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"

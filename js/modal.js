@@ -1,7 +1,7 @@
 // function estadoSelect() {
-//   let estadoSelect = document.getElementById("selectModal").value;
+// let estadoSelect = document.getElementById("selectModal").value;
 
-//   switch (estadoSelect) {
+// switch (estadoSelect) {
 //     case "1":
 //       document.getElementById("state1").style.display = "block";
 //       document.getElementById("state2").style.display = "none";
@@ -72,20 +72,25 @@
 //       document.getElementById("state7").style.display = "none";
 //       console.log("state7");
 //       break;
-//   }
+// }
 // };
 
-function estadoSelect() {
-  // Obtén el valor seleccionado
-  let estadoSelect = document.getElementById("selectModal").value;
-  
-  // Oculta todos los estados
-  for (let i = 1; i <= 7; i++) {
-    document.getElementById("state" + i).style.display = "none";
-  }
+function estadoSelect() { // Obtén el valor seleccionado
+	let estadoSelect = document.getElementById("selectModal").value;
+	console.log(estadoSelect);
 
-  // Muestra el estado seleccionado
-  if (estadoSelect >= 1 && estadoSelect <= 7) {
-    document.getElementById("state" + estadoSelect).style.display = "block";
-  }
+	// Oculta todos los estados
+	for (let i = 1; i <= 7; i++) {
+		document.getElementById("state" + i).style.display = "none";
+		console.log("state" + i);
+	}
+
+	// Muestra el estado seleccionado
+	if (estadoSelect >= 1 && estadoSelect <= 7) {
+		document.getElementById("state" + estadoSelect).style.display = "block";
+		console.log("state" + estadoSelect);
+	}
 }
+
+
+

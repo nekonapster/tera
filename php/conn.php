@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $conn = (new MongoDB\Client)->gdc->users;
 
@@ -19,7 +19,7 @@ foreach ($searchUsers as $show) {
     $adminTwo = $show["role"];
     $adminThree = $show["address"];
 
-    echo "<strong>$adminOne</strong>" . "<br>" ;
+    echo "<strong>$adminOne</strong>" . "<br>";
     echo "<strong>$adminTwo</strong>" . "<br>";
     echo "<strong>$adminThree</strong>" . "<br><br>";
 }

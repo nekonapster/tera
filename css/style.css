@@ -118,13 +118,18 @@ td a span:hover {
 	box-shadow: none !important;
 }
 
-#bordeLogoLogin {
+/* #bordeLogoLogin {
 	border: 4px solid;
 	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
-	/* position: relative; */
 	display: inline-block;
 	line-height: 0.9;
 	padding: 0 20px;
+} */
+
+.qrLogin{
+position: relative;
+left: 0px;
+top: 5px;
 }
 
 .teraLogoLogin{
