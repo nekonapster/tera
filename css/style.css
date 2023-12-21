@@ -130,6 +130,7 @@ td a span:hover {
 position: relative;
 left: 0px;
 top: 5px;
+width: 150px;
 }
 
 .teraLogoLogin{
