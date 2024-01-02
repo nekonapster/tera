@@ -58,6 +58,21 @@
 .misFacturasNav {
 	color: white;
 }
+.bolsilloNav {
+	color: white;
+}
+
+/* botones nav */
+.indexBtn-activado{
+  color: teal !important;
+}
+.userBtn-activado{
+  color: teal !important;
+}
+.bolsilloBtn-activado{
+  color: teal !important;
+}
+/* ============ */
 
 td a span {
 	color: #5473b5;
