@@ -38,6 +38,12 @@ const driverObj = driver({
 				description: "Ahora 'Datos personales', 'Mis Contratos' y 'Notificaciones' estan en una misma pantalla."
 			}
 		}, {
+			element: "#bolsillo",
+			popover: {
+				title: "Nuevo!!! Boton de Bolsillo Solar",
+				description: "Tanto Bolsillo Solar como Excedentes los podras encontrar aqui."
+			}
+		}, {
 			element: "#manual",
 			popover: {
 				title: "Nuevo!!! Boton Manual",
@@ -98,6 +104,7 @@ function leerCookie(clave) {
 			if (fin == -1) 
 				fin = document.cookie.length;
 			
+
 
 			valCookie = set(document.cookie.substring(pos, fin))
 		}

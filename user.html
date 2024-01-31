@@ -35,7 +35,6 @@
   <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 
   <!-- import scr bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -47,11 +46,11 @@
   <!-- import driver.js css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
 
-  <script defer src="./js/modal.js"></script>
-  <script defer src="./js/script.js"></script>
+  <script defer src="./js/modalTicket.js"></script>
+  <script defer src="./js/generalScript.js"></script>
 
 
-  <title>USER</title>
+  <title>Datos Personales</title>
 </head>
 
 <body>
@@ -64,32 +63,78 @@
       <!-- iconos de user, help and logout -->
       <div class="col-10 mt-1">
         <div class="d-flex justify-content-end">
-          <a class="btAccount" href="#" target="_self">
+          <a class="btAccount btnDelNav" href="#" target="_self">
             <span class="material-symbols-outlined h3 mt-1" id="tuto" onclick="iniciarTour()">
               smart_display
             </span>
           </a>
-          <a class="btAccount" href="index.html" target="_self">
+          <a class="btAccount btnDelNav" href="index.html" target="_self">
             <span class="material-symbols-outlined h3 mt-1">
               draft_orders
             </span>
           </a>
-          <a class="btAccount" href="user.html" target="_self">
+          <a class="btAccount btnDelNav" href="user.html" target="_self">
             <span class="material-symbols-outlined h3 mt-1 userBtn-activado">Account_Circle</span>
           </a>
-          <a class="btAccount" href="bolsillo.html" target="_self">
+          <a class="btAccount btnDelNav" href="bolsillo.html" target="_self">
             <span class="material-symbols-outlined h3 mt-1" id="bolsillo">beenhere</span>
           </a>
-          <a class="btAccount" href="./assets/pdf/manual.pdf" target="_blank">
+          <a class="btAccount btnDelNav" href="./assets/pdf/manual.pdf" target="_blank">
             <span class="material-symbols-outlined h3 mt-1">
               developer_guide
             </span>
           </a>
-          <a class="btExit" href="login.html" target="_self">
+          <a class="btExit btnDelNav" href="login.html" target="_self">
             <span class="material-symbols-outlined h3 mt-1">move_item</span>
           </a>
+          <!-- START HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight" id="btnBurger" style="background-color: transparent; border: none;">
+            <span class="material-symbols-outlined" style="color: rgb(49, 49, 49); font-size: 34px;">
+              menu
+            </span>
+          </button>
+          <!-- END HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
         </div>
       </div>
+      <!-- START HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+      <div class="offcanvas offcanvas-end offcanvas-size" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body offcanvas-bd-size">
+          <h3 class="text-white">Menu</h3>
+          <div class="col-10 mt-1">
+            <div class="container justify-content-end">
+              <div class="row">
+                <a class="btAccountBurguer menuBurgerTexto" href="#" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="tuto" onclick="iniciarTour()">Tutorial</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="index.html" targeibant="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="facturas">Mis Facturas</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="user.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="datos">Mis Contratos</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="bolsillo.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="bolsillo">Bolsillo Solar</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="./assets/pdf/manual.pdf" target="_blank">
+                  <spam class="tamañoBotonesBurgerNav" id="manual">Documentacion</spam>
+                </a>
+                <hr class="mt-3" style="border-color: white;">
+                <a class="btExitBurguer menuBurgerTexto" href="login.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav">Salir</spam>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
     </div>
   </div>
 
@@ -109,26 +154,28 @@
   <div class="container-fluid  mt-2">
     <div class="row justify-content-between g-3">
       <!-- area de "ultima conexion" -->
-      <!-- card que envuelve todo el lado derecho -->
+      <!-- CARD QUE ENVUELVE TODO EL LADO DERECHO -->
       <div class="col card bg-light border-2" id="zona1"> <span class="tamañoUltimaConexion">
           <strong>Ultima conexion:</strong><span class="lastConnection"></span>
           <!-- card cambiar contraseña -->
           <div class="col">
-            <!-- CARD 1-I START -->
+            <!-- CARD CAMBIO DE CONTRASEÑA START -->
             <div class="card shadow-sm mt-1">
               <div class="card-body" id="cambioPass">
                 <input type="text" class="form-control form-control-sm" id="exampleFormControlInput1"
                   placeholder="xxx-uuu-000-1111" disabled>
                 <input type="password" class="form-control form-control-sm mt-2" id="exampleFormControlInput2"
                   placeholder="5646464646464654" disabled>
+
+                <!-- DISPARADOR MODAL CAMBIO DE CONTRASEÑA -->
                 <div class="d-grid">
-                  <!-- MODAL - acceso a la ventana mediante button -->
                   <button href="#" class="btn btn-dark btn-sm mt-2" data-bs-toggle="modal"
                     data-bs-target="#cambioClaveModal">
                     Cambiar la contraseña
                   </button>
                 </div>
-                <!-- MODAL CAMBIO DE CONTRASEÑA START -->
+
+                <!-- MODAL CONTENT CAMBIO DE CONTRASEÑA START -->
                 <div class="modal fade" id="cambioClaveModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog">
@@ -150,20 +197,18 @@
                     </div>
                   </div>
                 </div>
-                <!-- MODAL END -->
+                <!-- MODAL CONTENT CAMBIO DE CONTRASEÑA END -->
               </div>
             </div>
           </div>
-          <!-- CARD 1-I END -->
+          <!-- CARD CARD CAMBIO DE CONTRASEÑA END -->
 
-          <!-- CARD 2-I START -->
-          <!-- card guardar cambios -->
+          <!-- CARD GUARDAR CAMBIOS START -->
           <div class="card mt-1 shadow-sm">
             <div class="card-body" id="guardarDatos">
               <h5 class="card-title">
                 <strong>Datos Personales</strong>
               </h5>
-              <!-- <form action=""> -->
               <!-- FORM DERECHA START -->
               <div class="row g-1">
                 <div class="col-sm-7">
@@ -210,17 +255,82 @@
                 <div class="d-grid">
                   <a href="#" class="btn btn-dark btn-sm mt-2">Guardar cambios</a>
                 </div>
-                <!-- </form> -->
-                <!-- FORM DERECHA END -->
+                <!-- CARD GUARDAR CAMBIOS END -->
               </div>
             </div>
           </div>
           <!-- SECCION NOTIFICACIONES -->
           <div class="card mt-1 mb-2 shadow-sm">
             <div class="card-body" id="notificaciones">
-              <h5 class="card-title">Notificaciones</h5>
+              <div class="container-fluid">
+                <div class="row justify-content-between">
+                  <div class="col w-75">
+                    <h5 class="card-title">Notificaciones</h5>
+
+                  </div>
+                  <!-- DISPARADOR MODAL HISTORY -->
+                  <div class="col text-end">
+                    <button type="button" class="btn m-0 p-0" data-bs-toggle="modal" data-bs-target="#historyModal">
+                      <span class="material-symbols-outlined material-history">history</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HISTORY NODAL CONTENT -->
+              <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Historial de Notificaciones</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <select id="selectModalContratos" class="form-select" aria-label="Default select example"
+                        onchange="estadoSelect()">
+                        <option selected disabled>Contratos</option>
+                        <option value="1">ES0031104331972008FN0F Aire</option>
+                        <option value="2">ES0031104331972008FN0F Aire 2</option>
+                      </select>
+                      <!-- /////////////////////////// CHAT SECTION ///////////////////////////////////// -->
+                      <div class="text-start mt-3">
+                        <span class="material-symbols-outlined align-middle mx-2"
+                          style="color: lightseagreen;">chat</span>
+                        <span style="font-size: 12px; color:lightseagreen; font-weight: bold1;" class="align-middle">
+                          <span>messages · <span>time: 12/01/2024</span></span>
+                        </span>
+                      </div>
+
+                      <p class="text-secondary p-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita,
+                        ex fugiat ad sit cum sint
+                        nostrum voluptate, recusandae quidem eum dolorum. Dolores, corrupti culpa perferendis iure nisi
+                        voluptatibus autem commodi.</p>
+                      <hr>
+
+                      <div class="text-end">
+                        <span style="font-size: 12px; color:lightseagreen; font-weight: bold1;" class="align-middle">
+                          <span>messages · <span>time: 12/01/2024</span></span>
+                        </span>
+                        <span class="material-symbols-outlined align-middle mx-2"
+                          style="color: lightseagreen;">chat</span>
+                      </div>
+
+                      <p class="text-secondary p-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita,
+                        ex fugiat ad sit cum sint
+                        nostrum voluptate, recusandae quidem eum dolorum. Dolores, corrupti culpa perferendis iure nisi
+                        voluptatibus autem commodi.</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /////////////////////////// CHAT SECTION ///////////////////////////////////// -->
+
+              <!-- END HISTORY NODAL CONTENT -->
+
               <div class="row align-items-center g-2">
-                <div class="col-lg-8 col-md-12">
+                <!-- <div class="col-lg-8 col-md-12">
                   <select name id class="form-select form-select-sm">
                     <option value>
                       ES0031104331972008FNOF AIRE - Fabrica Vieja 6 Yb Granada Granada
@@ -229,9 +339,12 @@
                       ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 Yb Granada Granada
                     </option>
                   </select>
-                </div>
-                <div class="col col-lg-4">
-                  <a href="#" class="btn btn-danger btn-sm px-4 d-grid" data-bs-toggle="modal"
+                </div> -->
+                <!-- <div class="col col-lg-4"> valores por defecto por si se quiere poner el select de arriba-->
+
+                <!-- DISPARADOR MODAL TICKET -->
+                <div class="col">
+                  <a href="#" class="btn btn-danger btn-sm px-4 d-grid mt-2" data-bs-toggle="modal"
                     data-bs-target="#ticketModal">Ticket</a>
                 </div>
               </div>
@@ -249,6 +362,13 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <select id="selectModalContratos" class="form-select" aria-label="Default select example"
+                    onchange="estadoSelect()">
+                    <option selected disabled>Contratos</option>
+                    <option value="1">ES0031104331972008FN0F Aire</option>
+                    <option value="2">ES0031104331972008FN0F Aire 2</option>
+                  </select>
+                  <br>
                   <select id="selectModal" class="form-select" aria-label="Default select example"
                     onchange="estadoSelect()">
                     <option selected disabled>Seleccione un motivo</option>
@@ -378,28 +498,24 @@
           </div>
           <!-- MODAL TICKET END -->
       </div>
-      <!-- CARD 2-I END -->
+      <!-- FIN DE LA ZONA IZQUIERDA -->
 
       <!-- ZONA DERECHA -->
       <!-- modificar los valores del div medianil para cambiar el tamaños que ocupa cada card -->
       <div class="medianil col-xs-12 col-md-8" id="zona2">
         <div class="row">
           <div class="col-12 mb-1">
-            <!-- FORM IQUIERA START -->
-            <!-- <form class="formularioContratos"> -->
-            <select class="form-select form-select-sm" aria-label="Small select example" name="contratos">
+            <!-- ZONA DEL SELECT DE CONTRATOS -->
+            <select class="form-select form-select-sm" aria-label="Small select example" name="contratos"
+              id="selectUser">
               <option selected class="custom-select">CONTRATOS</option>
-              <option value="1">
-                ES0031104331972008FNOF AIRE - Fabrica Vieja 6 30b Granada, Granada.
-              </option>
-              <option value="2">
-                ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 30b Granada, Granada.
+
               </option>
             </select>
-            <!-- FORM DERECHA END -->
-            <!-- </form> -->
+            <!-- FIN ZONA DEL SELECT DE CONTRATOS -->
           </div>
         </div>
+        <!-- ZONA DATOS GENERALES -->
         <div class="row justify-content-between g-1">
           <div class="col-xs-12 col-lg-5" id="datosGenerales">
             <span>
@@ -409,42 +525,48 @@
               <label for class="fs-6">
                 <span class="datosGenerales">Codigo del Contrato</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="ARF0004720">
+              <input type="text" disabled class="form-control form-control-sm"  id="userCodigoContratoDP">
               <label for class="fs-6">
                 <span class="datosGenerales">NIF</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="77488396Q">
+              <input type="text" disabled class="form-control form-control-sm"  id="userNifDP">
               <label for class="fs-6">
                 <span class="datosGenerales">Nombre</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="Andrea">
+              <input type="text" disabled class="form-control form-control-sm"  id="userNombreDP">
               <label for class="fs-6">
                 <span class="datosGenerales">Apellidos</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="Peñalver Ruíz">
+              <input type="text" disabled class="form-control form-control-sm"  id="userApellidoDP">
               <label for class="fs-6">
                 <span class="datosGenerales">Fecha de inicio</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="02-03-2020">
+              <input type="text" disabled class="form-control form-control-sm"  id="fechaInicioDP">
               <label for class="fs-6">
                 <span class="datosGenerales">Duracion</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="12">
+              <input type="text" disabled class="form-control form-control-sm"  id="userDuracionDP">
               <label for class="fs-6">
                 <span class="datosGenerales">Fecha Activacion Auto-Consumo</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="-">
+              <input type="text" disabled class="form-control form-control-sm"  id="userFechaActivacionAutoConsumoDP">
               <label for class="fs-6">
                 <span class="datosGenerales">IBAN</span>
               </label>
-              <input type="text" disabled class="form-control form-control-sm" placeholder="********************8717">
+              <input type="text" disabled class="form-control form-control-sm"  id="userIbanDP">
             </div>
           </div>
+          <!-- FIN ZONA DATOS GENERALES -->
+
+          <!-- ZONA DATOS CUPS -->
+
           <div class="col-md-12 col-lg-7" id="datosCups">
             <span>
               <strong>Datos Cups</strong>
             </span>
-            <span class="text-danger">ES0031104331972008FN0F</span>
+            <span class="text-danger" id="datosCups_rojo">
+              <!-- target #-->
+            </span>
             <div class="card shadow-sm p-1">
               <div class="row g-1">
                 <div class="col-9">
@@ -562,10 +684,15 @@
               </div>
             </div>
           </div>
+          <!-- FIN ZONA DATOS CUPS -->
         </div>
       </div>
     </div>
   </div>
+
+  <!-- import jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <!-- import driver.js -->
   <script src="./js/tourUser.js"></script>
@@ -578,6 +705,5 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
 
-</body>
-
-</html>
+  <!-- import js -->
+  <script src="./js/user.js"></script>

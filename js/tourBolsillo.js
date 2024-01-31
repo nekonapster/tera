@@ -1,4 +1,5 @@
 const driver = window.driver.js.driver;
+
 const driverObj = driver({
 	popoverClass: 'theme1',
 	animate: false,
@@ -11,49 +12,43 @@ const driverObj = driver({
 	showProgress: false,
 	steps: [
 		{
-			element: "#zona1",
+			element: "tour_main",
 			popover: {
-				title: "Zona uno",
-				description: "Hemos dividido en dos zonas el antiguo contenido. Una para 'Datos Personales', 'Cambio de Contraseña' e 'Informes de Errores'."
+				title: "Nueva seccion",
+				description: "Ahora Bolsillo Solar y Excedentes pertenecen a una misma area."
 			}
 		},
 		{
-			element: "#zona2",
+			element: ".tour_bolsillo_Exedentes",
 			popover: {
-				title: "Zona dos",
-				description: "Y el resto para 'Datos Generales' y 'Datos Cups'"
+				title: "Bolsillo Solar",
+				description: "Podras alternar entre ambas areas en una misma pagina."
 			}
 		},
 		{
-			element: "#cambioPass",
+			element: ".tour_info",
 			popover: {
-				title: "Cambio de Contraseña",
-				description: "Desde aqui puedes hacer el cambio de tu contraña."
+				title: "Nuevo boton de info",
+				description: "Puedes seguir viendo tu informacion desde este boton."
 			}
 		},
 		{
-			element: "#guardarDatos",
+			element: "#tour_boxes",
 			popover: {
-				title: "Guardar Datos",
-				description: "Los datos a tu alcanze junto con un boton para hacer las modificaciones que desees."
+				title: "Nueva!!! Zona de vista rapida",
+				description: "Te presentamos los datos mas importantes en tres simples boxes para que de un solo vistazo encuentres la informacion mas relevante.",
 			}
 		}, {
-			element: "#notificaciones",
+			element: ".tour_chart",
 			popover: {
-				title: "Nueva zona!!!",
-				description: "Hemos traido la zona de 'Ticket' a una unica pagina central. Puedes usar el desplegable para elegir tu contrato."
+				title: "Clickeame!!!",
+				description: "La grafica se puedes ampliar simplemente dandole un click."
 			}
 		}, {
-			element: "#datosGenerales",
+			element: ".tour_tabla_bolsillo",
 			popover: {
-				title: "Datos generelales",
-				description: "Ahora esta a la par sobre los datos de los Cups. Todo a tu alcance y de un solo vistazo."
-			}
-		}, {
-			element: "#datosCups",
-			popover: {
-				title: "Datos Cups",
-				description: "Los hemos puesto junto con las potencias contratadas y el precio. Todo facil de ver y facil de comparar."
+				title: "Tabla",
+				description: "La tabla con toda la informacion pero ahora mejor ubicada."
 			}
 		},
 	]
@@ -64,6 +59,7 @@ const driverObj = driver({
 function iniciarTour() {
 	driverObj.drive();
 }
+// =========================
 
 // guardo todas las cookies en 'clave'
 let clave = document.cookie;
@@ -89,12 +85,12 @@ function leerCookie(clave) {
 }
 
 // uso leerCookie para buscar la cookie que quiero y lo que me devuelve la meto en una variable
-let cookieUser = leerCookie('user')
+let cookieBolsillo = leerCookie('bolsillo')
 
 // comparo los valores para las dos cookies que quiero y denpendiendo de eso lanzo o no el tour
-if (cookieUser == "") {
+if (cookieBolsillo == "") {
 	driverObj.drive();
 }
 
 // las cookies deben ser colocadas luego de todas las funciones sino siempre tendra cookie asignada antes de hacer la comparacion dando falsa comparacion.
-document.cookie = "user=vistoTourUser; max-age=3600000";
+document.cookie = "bolsillo=vistoTourBolsillo; max-age=3600000";

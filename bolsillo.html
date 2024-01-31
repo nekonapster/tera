@@ -52,9 +52,10 @@
   <!-- import driver.js css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
 
-  <script defer src="./js/script.js"></script>
+  <script defer src="./js/generalScript.js"></script>
 
-  <title>TERA</title>
+  <title>BolsilloTest</title>
+
 </head>
 
 <body>
@@ -69,22 +70,77 @@
       <!-- iconos de user, help and logout NOTA: lleva un !important en css -->
       <div class="col-10 mt-1">
         <div class="d-flex justify-content-end">
-          <a class="btAccount" href="#" target="_self"><span class="material-symbols-outlined h3 mt-1" id="tuto"
-              onclick="iniciarTour()">
+          <a class="btAccount btnDelNav" href="#" target="_self"><span class="material-symbols-outlined h3 mt-1"
+              id="tuto" onclick="iniciarTour()">
               smart_display
             </span></a>
-          <a class="btAccount" href="index.html" target="_self"><span class="material-symbols-outlined h3 mt-1"
-              id="facturas">
+          <a class="btAccount btnDelNav" href="index.html" target="_self"><span
+              class="material-symbols-outlined h3 mt-1" id="facturas">
               draft_orders
             </span></a>
-          <a class="btAccount" href="user.html" target="_self"><span class="material-symbols-outlined h3 mt-1" id="datos">Account_Circle</span></a>
-          <a class="btAccount" href="bolsillo.html" target="_self"><span class="material-symbols-outlined h3 mt-1 bolsilloBtn bolsilloBtn-activado" id="bolsillo">beenhere</span></a>
-          <a class="btAccount" href="./assets/pdf/manual.pdf" target="_blank"><span class="material-symbols-outlined h3 mt-1" id="manual">developer_guide
+          <a class="btAccount btnDelNav" href="user.html" target="_self"><span class="material-symbols-outlined h3 mt-1"
+              id="datos">Account_Circle</span></a>
+          <a class="btAccount btnDelNav" href="bolsillo.html" target="_self"><span
+              class="material-symbols-outlined h3 mt-1 bolsilloBtn bolsilloBtn-activado"
+              id="bolsillo">beenhere</span></a>
+          <a class="btAccount btnDelNav" href="./assets/pdf/manual.pdf" target="_blank"><span
+              class="material-symbols-outlined h3 mt-1" id="manual">developer_guide
             </span></a>
-          <a class="btExit" href="login.html" target="_self"><span
+          <a class="btExit btnDelNav" href="login.html" target="_self"><span
               class="material-symbols-outlined h3 mt-1">move_item</span></a>
+
+          <!-- START HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight" id="btnBurger" style="background-color: transparent; border: none;">
+            <span class="material-symbols-outlined" style="color: rgb(49, 49, 49); font-size: 34px;">
+              menu
+            </span>
+          </button>
+          <!-- END HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
         </div>
       </div>
+
+      <!-- START HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+      <div class="offcanvas offcanvas-end offcanvas-size" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body offcanvas-bd-size">
+          <h3 class="text-white">Menu</h3>
+          <div class="col-10 mt-1">
+            <div class="container justify-content-end">
+              <div class="row">
+                <a class="btAccountBurguer menuBurgerTexto" href="#" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="tuto" onclick="iniciarTour()">Tutorial</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="index.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="facturas">Mis Facturas</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="user.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="datos">Mis Contratos</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="bolsillo.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="bolsillo ">Bolsillo Solar</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="./assets/pdf/manual.pdf" target="_blank">
+                  <spam class="tamañoBotonesBurgerNav" id="manual">Documentacion</spam>
+                </a>
+                <hr class="mt-3" style="border-color: white;">
+                <a class="btExitBurguer menuBurgerTexto" href="login.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav">Salir</spam>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
     </div>
   </div>
   <!-- navbar con logo de TERA y seccion "misFacturas" and "buscarFacturas" -->
@@ -95,8 +151,781 @@
     <!-- <div></div> -->
     <!-- DEPRECATED by Joaquin 20/12/2023 -->
     <!-- <div class="teraLogoBorderUser"><a href="index.html" class="navbar-brand text-light mt-2 teraLogoUser">TERA</a></div> -->
-    <div class="d-flex align-items-center p-1"><div>
-        <strong class="bolsilloNav m-2" id="b1">Bolsillo Solar</strong>
+    <div class="d-flex align-items-center p-1">
+      <div>
+        <strong class="bolsilloNav m-1" id="b1">Bolsillo Solar</strong>
       </div>
     </div>
   </nav>
+
+  <main class="tour_main">
+    <div class="container-fluid mt-1 px-0 px-lg-2">
+      <div class="card">
+        <div class="car-body bg-light p-1">
+          <div class="card-text">
+            <div class="container-fluid">
+              <div class="row justify-content-start">
+                <div class="col-12 col-lg-4 align-self-center" id="zonaUC">
+                  <strong>Ultima conexion:</strong><span class="lastConnection"></span>
+                </div>
+                <div class="col-12 col-lg-8 my-0 px-0 px-lg-2">
+                  <select class="form-select form-select-sm" aria-label="Small select example" name="direcciones">
+                    <option value="" style="font-weight: bold;"><strong>CONTRATOS</strong></option>
+                    <option value="">ES0031104331972008FNOF AIRE - Fabrica Vieja 6 30b Granada, Granada</option>
+                    <option value="">ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 30b Granada, Granada</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- g-1 separacion e/lado izq. y der. -->
+
+            <body>
+              <div class="container-fluid px-0 px-lg-2">
+                <div class="card mt-1 px-0 px-lg-2">
+                  <div class="card-body mt-0 pt-0 px-0 px-lg-2">
+                    <div class="container-fluid px-3 mt-2">
+                      <ul class="nav nav-tabs row tour_bolsillo_Exedentes" id="myTab" role="tablist">
+                        <li class="nav-item col-auto px-0 mx-0" role="presentation">
+                          <button class="nav-link active btnBolsillo" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Bolsillo</button>
+                        </li>
+                        <li class="nav-item col px-0 mx-1" role="presentation">
+                          <button class="nav-link btnExcedentes" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                            aria-selected="false">Excedentes</button>
+                        </li>
+                        <li class="nav-item col-auto col-auto" role="presentation">
+                          <!-- dispara MODAL -->
+                          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#infoModal"
+                            type="button"><span class="material-symbols-outlined tour_info">info</span></button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- VENTANA MODAL -->
+                    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog ">
+                        <div class="modal-content">
+                          <div class="modal-header bg-info bg-gradient">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Informacion</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="card shadow-sm p-1">
+                              <label for class="fs-6">
+                                <span class="datosGenerales">CUPS</span>
+                              </label>
+                              <input type="text" disabled class="form-control form-control-sm mt-1"
+                                placeholder="ES0031104331972008FNOF">
+                              <label for class="fs-6 mt-3">
+                                <span class="datosGenerales">Direccion</span>
+                              </label>
+                              <input type="text" disabled class="form-control form-control-sm mt-1"
+                                placeholder="Mariana de Pineda, 25">
+                              <label for class="fs-6 mt-3">
+                                <span class="datosGenerales">Provincia</span>
+                              </label>
+                              <input type="text" disabled class="form-control form-control-sm mt-1"
+                                placeholder="Sevilla">
+                              <label for class="fs-6 mt-3">
+                                <span class="datosGenerales">Municipio</span>
+                              </label>
+                              <input type="text" disabled class="form-control form-control-sm mt-1"
+                                placeholder="Sevilla">
+                              <label for class="fs-6 mt-3">
+                                <span class="datosGenerales">Codigo Postal</span>
+                              </label>
+                              <input type="text" disabled class="form-control form-control-sm mt-1 mb-3"
+                                placeholder="41927">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- FIN MODAL -->
+
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                        aria-labelledby="home-tab" tabindex="0">
+
+                        <!-- primer contenido BOLSILLO -->
+                        <div class="container-fluid g-1 mt-3">
+                          <div class="row g-1">
+                            <!-- DERECHA -->
+                            <div class="col-12 col-xl-5 mt-0">
+                              <div class="card shadow-sm">
+                                <!-- paddin de los tres cuadrados de colores -->
+                                <div class="card-body p-2">
+                                  <div class="row g-1 mb-1" id="tour_boxes">
+                                    <div class="col-12 col-md-4">
+                                      <div id="summary1"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-warning bg-gradient shadow-sm">
+                                        <span class="tituloCUadradosBolsillo">Codigo Amigo</span>
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1"><strong>7ccbc7ad</strong></h3>
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                                      <div id="summary4"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-dark bg-gradient shadow-sm">
+                                        <span class="tituloCUadradosBolsillo">Total Excedentes</span>
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1">150€</h3>
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                                      <div id="summary2"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-dark bg-gradient shadow-sm">
+                                        <span class="tituloCUadradosBolsillo">Ahorro Anual</span>
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1">30%</h3>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <hr>
+
+                                  <!-- DISPARADOR MODAL-BOLSILLO -->
+                                  <div class="table-responsive">
+                                    <button type="button" class="btn btn-outline-light m-0 p-0 tour_chart"
+                                      data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      <canvas class="graficaBolsillo m-0 p-0" id="myChartBolsillo"></canvas>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <!-- CONTENT MODAL CHART-BOLSILLO  -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                              aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Grafica de Bolsillo Solar</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <canvas id="myChartBolsilloModal" class="myChartBolsilloModal"></canvas>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end MODAL CHART -->
+
+
+                            <!-- DERECHA -->
+                            <div class="col mt-3 mt-lg-0">
+                              <div class="card tour_tabla_bolsillo">
+                                <div class="card-body p-2 shadow-sm">
+                                  <div class="table-responsive">
+                                    <dir class="tbodyDiv p-0 m-0" style="width: 100%;">
+                                      <table class="table table-sm table-stripped text-center">
+                                        <thead class="table-dark sticky-top">
+                                          <tr style="font-size: 13px;">
+                                            <th>Fecha</th>
+                                            <th>Desde</th>
+                                            <th>Hasta</th>
+                                            <th>Motivo</th>
+                                            <th>Saldo Incial</th>
+                                            <th>Llenado en Factura</th>
+                                            <th>Uso en Factura</th>
+                                            <th>Saldo Final</th>
+                                            <th>Excedentes</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">Ciclo</td>
+                                            <td style="width: 10px;">0<span>€ </span></td>
+                                            <td style="width: 10px;">10<span>€ </span></td>
+                                            <td style="width: 10px;">-10<span>€ </span></td>
+                                            <td style="width: 10px;">25<span>€</span></td>
+                                            <td style="width: 10px;">150<span>€</span></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </dir>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                        tabindex="0">
+                        <!-- segundo contenido EXCEDENTES -->
+                        <div class="container-fluid g-1 mt-3">
+                          <div class="row g-1">
+                            <!-- IZQUIERDA -->
+                            <div class="col-12 col-xl-5 mt-0">
+                              <div class="card shadow-sm">
+                                <div class="card-body p-1 p-lg-2">
+                                  <div class="row g-1 mb-1">
+                                    <div class="col-12 col-md-4">
+                                      <div id="summary1"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-warning bg-gradient shadow-sm">
+                                        Codigo Amigo
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1"><strong>7ccbc7ad</strong></h3>
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                                      <div id="summary4"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-dark bg-gradient shadow-sm">
+                                        Total Excedentes
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1">150€</h3>
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                                      <div id="summary2"
+                                        class="infoBox summary mt-1 pt-2 rounded-1 bg-dark bg-gradient shadow-sm">
+                                        <span class="infoBoxEP">Excedentes Producidos</span>
+                                        <hr>
+                                        <h3 class="infoBox infoData p-1">175 kWh</h3>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <hr>
+                                  <!-- DISPARADOR MODAL-EXCEDENTES -->
+                                  <div class="table-responsive">
+                                    <button type="button" class="btn btn-outline-light m-0 p-0" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModal2">
+                                      <canvas id="myChartExcedentes" class="graficaBolsillo m-0 p-0"></canvas>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- CONTENT MODAL CHART-EXCEDENTES  -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                              aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Grafica de Excedentes</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <canvas id="myChartExcedentesModal" class="myChartBolsilloModal"></canvas>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- end MODAL CHART -->
+
+                            <!-- DERECHA -->
+                            <div class="col mt-0">
+                              <div class="card">
+                                <div class="card-body shadow-sm p-2">
+                                  <div class="table-responsive">
+                                    <div class="tbodyDiv p-0 m-0" style="width: 100%;">
+
+
+                                      <table class="table table-sm table-stripped text-center">
+                                        <thead class="table-dark sticky-top">
+                                          <tr style="font-size: 13px;">
+                                            <th>Fecha</th>
+                                            <th>Desde</th>
+                                            <th>Hasta</th>
+                                            <th>Consumo de Red</th>
+                                            <th>Excedente Producidos</th>
+                                            <th>Excedentes</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">20/20/24</td>
+                                            <td style="width: 10px;">168 kWh</td>
+                                            <td style="width: 10px;">391.73 kWh</td>
+                                            <td style="width: 10px;">28.25€</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <!-- import jquery -->
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+          <!-- import bootstrap 5.3.2 -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+          <!-- import chartjs -->
+          <script src="./js/chart/bolsilloChart.js"></script>
+
+          <!-- scr driver.js -->
+          <script src="./js/tourBolsillo.js"></script>
+
+          <!-- import js -->
+          <script src="./js/bolsillo.js"></script>

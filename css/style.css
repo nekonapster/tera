@@ -1,3 +1,4 @@
+/* estilos para un div test que uso para visualizar elementos */
 .test {
 	position: relative;
 	color: white;
@@ -7,33 +8,82 @@
 	height: 20px;
 }
 
-.logoNav {
+/* ESTILOS DEPRECATED */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* .teraLogoIndex,
+.teraLogoUser {
+	font-size: 30px !important;
+	font-family: "Teko", sans-serif;
+	margin-left: 15px;
+} */
+/* .teraLogoBorderIndex,
+.teraLogoBorderUser {
 	margin-left: 10px;
+	padding-bottom: 4px !important;
+	height: 33px !important;
+	border: 3px solid white;
+	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+	display: flex;
+	align-items: center;
+} */
+/* td a span {
+	color: #5473b5;
 }
-
-.off {
+td a span:hover {
+	color: #9ab2e6;
+} */
+/* .todasLasFacturas {
+	margin-left: 10px;
+} */
+/* .teraLogoLogin {
+	font-size: 50px;
+	color: black;
+	font-family: "Teko", sans-serif;
+	position: relative;
+	top: 5px;
+} */
+/* .focusNone {
+	box-shadow: none !important;
+} */
+/* .teraLogo {
+	margin-left: 10px;
+	border: 3px solid white;
+	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+} */
+/* estilos para un logo de tera que joaquin quito */
+/* .logoNav {
+	margin-left: 10px;
+} */
+/* .off {
 	margin-left: 120vh;
 	padding-top: 8px;
 	color: white;
+} */
+/* .logoCliente {
+	position: relative;
+	top: 12px;
+	font-weight: 500;
+} */
+/* .teraLogo:hover {
+	border: 3px solid white;
+} */
+
+/* ESTILOS COMUNES */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+th {
+	vertical-align: middle;
 }
 
-.logoCliente,
+/* estilos para el scrolling de las tablas */
+.tbodyDiv {
+	max-height: clamp(1em, 65vh, 500px);
+}
+
+/* estilos para iconos del nav */
 .btHelp,
 .btAccount,
 .btExit {
 	color: black;
-}
-
-.logoCliente {
-	position: relative;
-	top: 12px;
-	font-weight: 500;
-}
-
-.headerT {
-	position: sticky;
-	top: 0;
-	background-color: rgb(191, 191, 191);
 }
 
 .btHelp,
@@ -41,51 +91,69 @@
 	margin-right: 25px;
 }
 
-.teraLogo {
-	margin-left: 10px;
-	border: 3px solid white;
-	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
+/* botones nav */
+.indexBtn-activado {
+	color: teal !important;
 }
 
-.teraLogo:hover {
-	border: 3px solid white;
+.userBtn-activado {
+	color: teal !important;
+}
+
+.bolsilloBtn-activado {
+	color: teal !important;
+}
+
+/* ESTILOS DEL INDEX */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* pointer sobre cups */
+#copyIconIndex:hover{
+	cursor: pointer;
+}
+
+/* scrolling para la tabla del index */
+.tbodyDivIndex {
+	max-height: clamp(1em, 77vh, 500px);
+}
+
+/* estilo de fijacion para el rotulo de la tabla en index  */
+.headerT {
+	position: sticky;
+	top: 0;
 }
 
 .lupa {
 	margin-right: 10px;
 	color: gray;
 }
+
 .misFacturasNav {
 	color: white;
 }
-.bolsilloNav {
-	color: white;
+
+/* ESTILOS DEL LOGIN */
+
+.card-login {
+	width: 300px;
 }
 
-/* botones nav */
-.indexBtn-activado{
-  color: teal !important;
-}
-.userBtn-activado{
-  color: teal !important;
-}
-.bolsilloBtn-activado{
-  color: teal !important;
-}
-/* ============ */
-
-td a span {
-	color: #5473b5;
+.qrLogin {
+	position: relative;
+	left: 0;
+	top: 5px;
+	width: 150px;
 }
 
-td a span:hover {
-	color: #9ab2e6;
+
+/* ESTILOS DEL USER */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* estilos para el icono del historial */
+.material-history {
+	color: rgb(54, 54, 54);
 }
 
-.todasLasFacturas {
-	margin-left: 10px;
-}
-
+/* bold para "contratos" del select */
 .custom-select {
 	font-weight: bold;
 }
@@ -96,7 +164,118 @@ td a span:hover {
 	font-size: 16px;
 }
 
+/* ESTILOS DE BOLSILLO SOLAR */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* titulo de la cabecera */
+.bolsilloNav {
+	color: white;
+}
+
+/* estilos de los cuadrados de informacion importante */
+.summary {
+	height: 130px;
+	color: #ffffff;
+	font-weight: bold !important;
+}
+
+/* estilos para los tabs */
+.btnBolsillo,
+.btnExcedentes {
+	font-weight: 550 !important;
+	color: rgb(70, 70, 70) !important;
+}
+
+.btnBolsillo:hover,
+.btnExcedentes:hover {
+	font-weight: 550 !important;
+	color: rgb(29, 214, 205) !important;
+}
+
+.active {
+	color: hwb(177 8% 35%) !important;
+}
+
+/* estilos para los titulos de las cajas */
+.infoBox {
+	text-align: center;
+}
+
+/* erstilo personalizado para el titulo de la caja "EXCEDENTES PRODUCIDOS" */
+.infoBoxEP {
+	text-align: center;
+	font-size: 14px;
+}
+
+/* estilos para la informacion de las cajas */
+.infoData {
+	font-weight: bold;
+	font-size: 30 px;
+}
+
+/* tamaño del espacio donde se aloja el texto dentro del burguer, esta marcado por el fondo de color darkslategray*/
+.offcanvas-bd-size {
+	width: 285px !important;
+}
+
+.table-responsive {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+/* BURGUER */
+
+/* color del fondo del burguer */
+.offcanvas {
+	background-color: hsl(177, 76%, 37%) !important;
+}
+
+/* tamaño del texto */
+.tamañoBotonesBurgerNav {
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: 599;
+	color: white;
+	padding: 10px;
+}
+
+/* espacio entre texto */
+.menuBurgerTexto {
+	padding: 10px;
+}
+
+
+/* borrado de la linea del texto */
+.btAccountBurguer,
+.btExitBurguer {
+	text-decoration: none;
+}
+
+/* fx cuando el cursor se pone sobre el texto */
+.btAccountBurguer:hover,
+.btExitBurguer:hover {
+	color: white;
+	background-color: darkslategray;
+}
+
+/* tamaño de la ventana del burger */
+.offcanvas-size {
+	--bs-offcanvas-width: min(50vw, 200px) !important;
+	padding: 0;
+
+}
+
+
+/* ESTILOS @MEDIA */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
 @media screen and(max-width: 1122px) {
+
 	.tamañoCubs,
 	.datosGenerales,
 	.tamañoUltimaConexion {
@@ -109,11 +288,13 @@ td a span:hover {
 		font-size: 13px;
 	}
 }
+
 @media screen and(max-width: 870px) {
 	.tamañoUltimaConexion {
 		font-size: 11px;
 	}
 }
+
 @media screen and(max-width: 760px) {
 	.tamañoUltimaConexion {
 		font-size: 16px;
@@ -121,6 +302,7 @@ td a span:hover {
 }
 
 @media screen and(max-width: 400px) {
+
 	.tamañoCubs,
 	.datosGenerales,
 	.tamañoUltimaConexion {
@@ -128,127 +310,74 @@ td a span:hover {
 	}
 }
 
-/* LOGIN */
-.focusNone {
-	box-shadow: none !important;
-}
-
-/* #bordeLogoLogin {
-	border: 4px solid;
-	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
-	display: inline-block;
-	line-height: 0.9;
-	padding: 0 20px;
-} */
-
-.qrLogin{
-position: relative;
-left: 0px;
-top: 5px;
-width: 150px;
-}
-
-.teraLogoLogin{
-	font-size: 50px;
-	color: black;
-	font-family: "Teko", sans-serif;
-	position: relative;
-	top: 5px;
-}
-
-.teraLogoBorderIndex, .teraLogoBorderUser {
-	margin-left: 10px;
-	padding-bottom: 4px !important;
-	height: 33px !important;
-	border: 3px solid white;
-	border-image: linear-gradient(0.25turn, #5473b5, #ff0008) 1;
-	
-	display: flex;
-	align-items: center;	
-
-}
-
-.teraLogoIndex, .teraLogoUser{
-	font-size: 30px !important ;
-	font-family: "Teko", sans-serif;
-	margin-left: 15px;
-}
-
-
-.card-login {
-	width: 300px;
-}
-
-@media (max-width: 992px) {
+@media(max-width: 992px) {
 	.login {
-	  display: flex;
-	  justify-content: center;
-	}
-  }
-
-  @media (min-width: 576px) {
-	.login {
-	  justify-content: flex-end;
-	  margin-top: 50%;
-	}
-
-  }
-
-  /* for iPad Air */
-  @media (width: 820px) {
-	.login {
-	  justify-content: flex-end;
-	  margin: 33% auto !important;
-	}
-  }
-  
-  /* for iPad Mini vertical*/
-  @media (width: 768px) {
-	  .login {
-		  justify-content: flex-end;
-		  margin: 25% auto !important;
-		}
-	}
-	/* for iPad Mini horizontal*/
-  @media (width: 1180px) {
-	.login {
-	  justify-content: flex-end;
-	  margin: 10% auto !important;
-	}
-  }
-
-  /* for iPad Pro vertical*/
-  @media (width: 1024px) {
-	.login{
-	  justify-content: flex-end;
-	  margin: 10% auto !important;
+		display: flex;
+		justify-content: center;
 	}
 }
 
-  /* for Surface Pro */
-  @media (width: 912px) {
-	  .login{
-		  justify-content: flex-end;
-		  margin: 30% auto !important;
-		  zoom: 110%;
-		}
+@media(min-width: 576px) {
+	.login {
+		justify-content: flex-end;
+		margin-top: 50%;
 	}
-	
-	/* for tablets 1920 */
-	@media (width: 1920px) {
-		.login{
-			justify-content: flex-end;
-			margin: 10% 0 0 70% !important;
-			zoom: 130%;
-		  }
-		  .molinos{
-			width: 600px !important;
-			margin: 50px 0;
-		  }
-	  }
+}
 
+/* for iPad Air */
+@media(width: 820px) {
+	.login {
+		justify-content: flex-end;
+		margin: 33% auto !important;
+	}
+}
 
+/* for iPad Mini vertical*/
+@media(width: 768px) {
+	.login {
+		justify-content: flex-end;
+		margin: 25% auto !important;
+	}
+}
 
+/* for iPad Mini horizontal*/
+@media(width: 1180px) {
+	.login {
+		justify-content: flex-end;
+		margin: 10% auto !important;
+	}
+}
+
+/* for iPad Pro vertical*/
+@media(width: 1024px) {
+	.login {
+		justify-content: flex-end;
+		margin: 10% auto !important;
+	}
+}
+
+/* for Surface Pro */
+@media(width: 912px) {
+	.login {
+		justify-content: flex-end;
+		margin: 30% auto !important;
+		zoom: 110%;
+	}
+}
+
+/* for tablets 1920 */
+@media(width: 1920px) {
+	.login {
+		justify-content: flex-end;
+		margin: 10% 0 0 70% !important;
+		zoom: 130%;
+	}
+
+	.molinos {
+		width: 600px !important;
+		margin: 50px 0;
+	}
+}
 
 /* USER */
 .informacionFactura {
@@ -261,6 +390,7 @@ width: 150px;
 		font-size: 12px;
 	}
 }
+
 @media screen and(max-width: 560px) {
 	.mostrarFacturas {
 		font-size: 12px;
@@ -279,8 +409,57 @@ width: 150px;
 		font-size: 12px;
 	}
 }
+
 @media screen and(max-width: 992px) {
 	.material-symbols-outlined {
 		font-size: 36px !important;
+	}
+}
+
+/* BOLSILLO */
+
+/* @medias para adaptar el tamaño de la grafica */
+@media (max-width: 500px) {
+	.graficaBolsillo {
+		width: 350px !important;
+	}
+}
+
+@media (min-width: 500px) {
+	.graficaBolsillo {
+		width: 500px !important;
+
+	}
+}
+
+@media (min-width: 500px) {
+	.myChartBolsilloModal {
+		width: 466px !important;
+		height: 233px !important;
+	}
+}
+
+/* @media (max-width: 926px) {
+	.myChartBolsilloModal{
+		height: 233px !important;
+		width: 466px !important;
+	}
+} */
+
+
+/* BURGUER */
+
+/* @media para el burguer */
+/* hace que se esconda el burger para tamños mayores a 500 */
+@media (min-width: 799px) {
+	#btnBurger {
+		display: none;
+	}
+}
+
+/* hace que se escondan los iconos del nav para tamaños menores a 500 */
+@media (max-width: 800px) {
+	.btnDelNav {
+		display: none;
 	}
 }

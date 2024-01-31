@@ -14,6 +14,3 @@ function estadoSelect() { // Obtén el valor seleccionado
 		console.log("state" + estadoSelect);
 	}
 }
-
-
-

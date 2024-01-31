@@ -33,7 +33,6 @@
   <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <!-- import DATE -->
   <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -52,14 +51,15 @@
   <!-- import driver.js css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
 
-  <script defer src="./js/script.js"></script>
+  <script defer src="./js/generalScript.js"></script>
 
-  <title>TERA</title>
+
+  <title>Facturas</title>
 </head>
 
 <body>
 
-
+  <!-- CABECERA---------------------------------------------------------------------------------------------- -->
   <div class="container-fluid">
     <div class="row">
       <div class="col-2">
@@ -69,24 +69,74 @@
       <!-- iconos de user, help and logout NOTA: lleva un !important en css -->
       <div class="col-10 mt-1">
         <div class="d-flex justify-content-end">
-          <a class="btAccount" href="#" target="_self"><span class="material-symbols-outlined h3 mt-1" id="tuto"
-              onclick="iniciarTour()">
+          <a class="btAccount btnDelNav" href="#" target="_self"><span class="material-symbols-outlined h3 mt-1"
+              id="tuto" onclick="iniciarTour()">
               smart_display
             </span></a>
-          <a class="btAccount" href="index.html" target="_self"><span class="material-symbols-outlined h3 mt-1 indexBtn-activado"
-              id="facturas">
+          <a class="btAccount btnDelNav" href="index.html" target="_self"><span
+              class="material-symbols-outlined h3 mt-1 indexBtn-activado" id="facturas">
               draft_orders
             </span></a>
-          <a class="btAccount" href="user.html" target="_self"><span class="material-symbols-outlined h3 mt-1" id="datos">Account_Circle</span></a>
-          <a class="btAccount" href="bolsillo.html" target="_self"><span class="material-symbols-outlined h3 mt-1" id="bolsillo">beenhere</span></a>
-          <a class="btAccount" href="./assets/pdf/manual.pdf" target="_blank"><span class="material-symbols-outlined h3 mt-1" id="manual">developer_guide
+          <a class="btAccount btnDelNav" href="user.html" target="_self"><span class="material-symbols-outlined h3 mt-1"
+              id="datos">Account_Circle</span></a>
+          <a class="btAccount btnDelNav" href="bolsillo.html" target="_self"><span
+              class="material-symbols-outlined h3 mt-1" id="bolsillo">beenhere</span></a>
+          <a class="btAccount btnDelNav" href="./assets/pdf/manual.pdf" target="_blank"><span
+              class="material-symbols-outlined h3 mt-1" id="manual">developer_guide
             </span></a>
-          <a class="btExit" href="login.html" target="_self"><span
+          <a class="btExit btnDelNav" href="login.html" target="_self"><span
               class="material-symbols-outlined h3 mt-1">move_item</span></a>
+          <!-- START HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight" id="btnBurger" style="background-color: transparent; border: none;">
+            <span class="material-symbols-outlined" style="color: rgb(49, 49, 49); font-size: 34px;">
+              menu
+            </span>
+          </button>
+          <!-- END HAMBURGUER BUTTON ///////////////////////////////////////////////////////////////////////////////////////////////// -->
         </div>
       </div>
+      <!-- START HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+      <div class="offcanvas offcanvas-end offcanvas-size" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body offcanvas-bd-size">
+          <h3 class="text-white">Menu</h3>
+          <div class="col-10 mt-1">
+            <div class="container justify-content-end">
+              <div class="row">
+                <a class="btAccountBurguer menuBurgerTexto" href="#" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="tuto" onclick="iniciarTour()">Tutorial</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="index.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="facturas">Mis Facturas</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="user.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="datos">Mis Contratos</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="bolsillo.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav" id="bolsillo">Bolsillo Solar</spam>
+                </a>
+                <a class="btAccountBurguer menuBurgerTexto" href="./assets/pdf/manual.pdf" target="_blank">
+                  <spam class="tamañoBotonesBurgerNav" id="manual">Documentacion</spam>
+                </a>
+                <hr class="mt-3" style="border-color: white;">
+                <a class="btExitBurguer menuBurgerTexto" href="login.html" target="_self">
+                  <spam class="tamañoBotonesBurgerNav">Salir</spam>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END HAMBURGUER CONTENT ///////////////////////////////////////////////////////////////////////////////////////////////// -->
     </div>
   </div>
+
   <!-- navbar con logo de TERA y seccion "misFacturas" and "buscarFacturas" -->
   <!-- "buscarFacturas" es un dropdown para ampliar la busqueda por filtros tanto de fechas como de direccion -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark justify-content-between">
@@ -95,7 +145,8 @@
     <!-- <div></div> -->
     <!-- DEPRECATED by Joaquin 20/12/2023 -->
     <!-- <div class="teraLogoBorderUser"><a href="index.html" class="navbar-brand text-light mt-2 teraLogoUser">TERA</a></div> -->
-    <div class="d-flex align-items-center"><div>
+    <div class="d-flex align-items-center">
+      <div>
         <strong class="misFacturasNav m-2" id="b1">Mis Facturas</strong>
       </div>
       <div class="mx-3 align-items-center">
@@ -122,20 +173,18 @@
       <div class="row g-0 justify-content-sm-end align-items-center">
         <!-- direcciones -->
         <div class="col-4 col-sm-4 col-md-4 col-lg-3" style="margin-right: 5px;">
-          <form class="formularioDirecciones">
             <select class="form-select form-select-sm" aria-label="Small select example" name="direcciones">
               <option selected style="font-weight: bold">
                 Todas las direcciones
               </option>
               <option value="1">Fabrica Vieja 6 30b</option>
             </select>
-          </form>
         </div>
-        <!-- date range -->
+        <!-- DATE RANGE JS -->
         <div class="col-3 col-sm-4 col-md-4 col-lg-3" style="margin-right: 5px;">
-          <input type="text" name="dates" class="form-control form-control-sm" />
+          <input type="text" name="dates" class="form-control form-control-sm">
         </div>
-        <!-- button buscar -->
+        <!-- SEARCH BUTTON -->
         <div
           class="col-3 col-sm-1 col-md-1 col-lg-1 d-flex justify-content-sm-start justify-content-sm-end justify-content-md-end justify-content-lg-end">
           <button class="btn btn-primary btn-sm" style="width: 100px;" type="button">buscar</button>
@@ -143,46 +192,36 @@
       </div>
     </div>
   </div>
-  <!-- fin del elemento colapsado ------------ -->
+  <!-- FIN ELEMENTO COLAPSADO  ------------ -->
 
   <div class="container-fluid mt-2">
     <div class="row justify-content-sm-start justify-content-lg-end">
-      <!-- area de "ultima conexion" -->
+
+      <!-- AREA "ULTIMA CONEXION" -->
       <div class="col-12 col-lg-5 order-lg-1 order-3" id="zonaUC">
         <strong>Ultima conexion:</strong><span class="lastConnection"></span>
       </div>
       <div class="col-4 order-lg-2 order-2">
-        <!-- ZONA SELECT CONTRATOS -->
-        <form class="formularioContratos">
-          <select class="form-select form-select-sm" aria-label="Small select example" name="contratos">
-            <option selected style="font-weight: bold">
-              Todos los Contratos
-            </option>
-            <option value="1">
-              ES0031104331972008FNOF AIRE - Fabrica Vieja 6 30b Granada
-              Granada
-            </option>
-            <option value="2">
-              ES0031104331972008FNOF AIRE2 - Fabrica Vieja 6 30b Granada
-              Granada
+
+        <!-- ZONA DERECHA, SELECT CONTRATOS  -->
+          <!-- SELECT DE CONTRATOS -->
+          <select class="form-select form-select-sm" aria-label="Small select example" id="selecContratosIndex">
+            <option value="Contratos" selected style="font-weight: bold">
+              Contratos
             </option>
           </select>
-        </form>
       </div>
       <div class="col-8 col-sm-8 col-md-8 col-lg-3 order-lg-3 order-2">
         <div class="form-group">
           <div class="input-group">
             <!-- ZONA SEARCH -->
-            <!-- <form class="formularioBuscar"> -->
             <span class="lupa material-symbols-outlined mt-1">search</span>
-            <input class="form-control form-control-sm mb-2 type=" text" placeholder="Buscar" name="buscar" />
-            <!-- </form> -->
+            <input class="form-control form-control-sm mb-2 type=" placeholder="Buscar" name="buscar">
           </div>
         </div>
       </div>
     </div>
-
-    <!-- CONTENEDOR GENERAL G-2 DIVIDE EL CENTRO -->
+    <!-- CONTENEDOR GENERAL. g-2 DIVIDE EL CENTRO -->
     <div class="row g-2">
       <!-- LADO IZQ -->
       <div class="col-12 col-lg-5 order-lg-1 order-2">
@@ -190,7 +229,7 @@
           <!-- LADO IZQ ZONA ARRIBA -->
           <div class="col-lg-12">
             <div class="card" id="graficaIndex">
-              <div class="card-body">
+              <div class="card-body my-0 mx-1 p-0">
                 <!-- ZONA DEL CHART.JS -->
                 <canvas id="myChart"></canvas>
               </div>
@@ -200,33 +239,39 @@
             <!-- LADO IZQ ZONA ABAJO -->
             <div class="col-lg-12">
               <div class="card mt-2 shadow-sm informacionFactura" id="informacionFactura">
-                <div class="card-body ">
-                  <div class="table m-0">
+                <div class="card-body mx-2 p-1">
+                  <div class="table m-0 mt-2">
+                    <strong id="brand_addressTable"></strong>
                     <div class="table-responsive">
-                      <caption>
-                        <strong>Aire-2</strong>
-                      </caption>
                       <table class="table table-sm table-light table-striped">
                         <tbody class="table-group-divider">
                           <tr>
-                            <td>CUPS</td>
-                            <td>ES0031104331972008FN0F</td>
+                            <td class="align-middle">CUPS</td>
+                            <td id="cups_addressTable">
+                            </td>
+                            <td class="text-end px-2"><span id="copyIconIndex" onclick="copyCups()" class="material-symbols-outlined align-middle">
+                              content_copy
+                              </span></td>
                           </tr>
                           <tr>
                             <td>Dirección</td>
-                            <td>Fabrica Vieja 6 3ºb</td>
+                            <td id="address_addressTable"></td>
+                            <td></td>
                           </tr>
                           <tr>
                             <td>Provincia</td>
-                            <td>Granada</td>
+                            <td id="location1_addressTable"></td>
+                            <td></td>
                           </tr>
                           <tr>
                             <td>Municipio</td>
-                            <td>Granada</td>
+                            <td id="location2_addressTable"></td>
+                            <td></td>
                           </tr>
                           <tr>
                             <td>Código Postal</td>
-                            <td>18002</td>
+                            <td id="cp_addressTable"></td>
+                            <td></td>
                           </tr>
                         </tbody>
                       </table>
@@ -243,98 +288,44 @@
       <!-- LADO DERECHO -->
       <div class="col-12 col-lg-7 order-lg-2 order-1">
         <div class="card table-responsive" id="zonaFacturas">
-          <table class="table table-sm table-striped align-middle table-light">
-            <thead class="table-dark">
-              <tr class="text-center">
-                <th class="headerT">Fecha</th>
-                <th class="headerT">Nº Factura</th>
-                <th class="headerT">Desde</th>
-                <th class="headerT">Hasta</th>
-                <th class="headerT">Consumo kWh</th>
-                <th class="headerT">Total €</th>
-                <th class="headerT">Descargar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-center">
-                <td class="tablaIndex align-middle">02/08/21</td>
-                <td class="tablaIndex align-middle">AR-08-05965</td>
-                <td class="tablaIndex align-middle">01/06/21</td>
-                <td class="tablaIndex align-middle">06/07/21</td>
-                <td class="tablaIndex align-middle">0 kWh</td>
-                <td class="tablaIndex align-middle">22.02 €</td>
-                <td class="tablaIndex align-middle">
-                  <a href="#">
-                    <span class="material-symbols-outlined">download </span>
-                  </a>
-                </td>
-              </tr>
-              <tr class="text-center">
-                <td class="tablaIndex">02/08/21</td>
-                <td class="tablaIndex">AR-08-05965</td>
-                <td class="tablaIndex">01/06/21</td>
-                <td class="tablaIndex">06/07/21</td>
-                <td class="tablaIndex">0 kWh</td>
-                <td class="tablaIndex">22.02 €</td>
-                <td class="tablaIndex">
-                  <a href="#"><span class="material-symbols-outlined">download</span></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <dir class="tbodyDiv tbodyDivIndex p-0 m-0" style="width: 100%;">
+            <table class="table table-sm table-striped align-middle table-light">
+              <thead class="table-dark">
+                <tr class="text-center">
+                  <!-- class headerT se usa en css para hacer la cabecera de la tabla stiky -->
+                  <th class="headerT">Fecha</th>
+                  <th class="headerT">Nº Factura</th>
+                  <th class="headerT">Desde</th>
+                  <th class="headerT">Hasta</th>
+                  <th class="headerT">Consumo kWh</th>
+                  <th class="headerT">Total €</th>
+                  <th class="headerT">Descargar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center">
+                  <!-- tablaIndex tiene un @media en css -->
+                  <td class="tablaIndexFecha align-middle">02/08/21</td>
+                  <td class="tablaIndexN_factura align-middle">AR-08-05965</td>
+                  <td class="tablaIndexDesde align-middle">01/06/21</td>
+                  <td class="tablaIndexHasta align-middle">06/07/21</td>
+                  <td class="tablaIndexConsumo align-middle">0 kWh</td>
+                  <td class="tablaIndexTotal align-middle">22.02 €</td>
+                  <td class="tablaIndexDescargar align-middle">
+                    <a href="#">
+                      <span class="material-symbols-outlined">download </span>
+                    </a>
+                  </td>
+              </tbody>
+            </table>
+          </dir>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- scr chart.js -->
-  <script>
-    const ctx = document.getElementById("myChart");
-
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: [
-          "enero",
-          "febrero",
-          "marzo",
-          "arbril",
-          "mayo",
-          "junio",
-          "julio",
-          "agosto",
-          "septiembre",
-          "octubre",
-          "noviembre",
-          "diciembre",
-        ],
-        datasets: [
-          {
-            fill: {
-              target: "origin",
-              above: "rgb(254, 119, 123)",
-            },
-            label: "consumos",
-            data: [2, 19, 3, 5, 2, 2, 12, 1, 3, 3, 6, 4],
-            borderWidth: 2,
-          },
-        ],
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-  </script>
-
+  <!-- scr chart.js GRAFICA LADO IZQUIERDO-->
+  <script src="./js/chart/indexChart.js"></script>
 
   <!-- scr driver.js -->
   <script src="./js/tourIndex.js"></script>
@@ -350,11 +341,12 @@
 
 
 
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
   <!-- SCR TO DATE FILTER -->
   <script>
     $('input[name="dates"]').daterangepicker();
   </script>
-
-</body>
-
-</html>
+    
+  <script src="./js/index.js"></script>

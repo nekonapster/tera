@@ -59,7 +59,3 @@ $.ajax({
   .fail(function (jqXHR, exception) {
       setFailError(jqXHR, exception);
   });
-
-
-
-
